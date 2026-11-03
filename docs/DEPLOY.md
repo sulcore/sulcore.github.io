@@ -18,16 +18,12 @@ The workflow can also be started by hand: **Actions → Deploy → Run workflow*
 2. **Settings → Pages → Build and deployment → Source: GitHub Actions.**
 3. Run the Deploy workflow once (or push to `main`).
 
-## Addresses
+## Address
 
-| Repository name | Site address |
-|---|---|
-| `sulcore/sulcore-site` | `https://sulcore.github.io/sulcore-site/` |
-| `sulcore/sulcore.github.io` | `https://sulcore.github.io/` |
-
-Renaming the repository to `sulcore.github.io` (**Settings → General → Repository name**)
-moves the site to the root of the organization address. No code change is needed: the base
-path comes from the workflow. GitHub redirects the old repository URL.
+The repository is `sulcore/sulcore.github.io`, so the site is served at the root of the
+organization address: **https://sulcore.github.io/**. (It started as `sulcore/sulcore-site`,
+served at `/sulcore-site/`; the rename needed no code change because the base path comes from
+the workflow, and GitHub redirects the old repository URL.)
 
 ## Custom domain (later)
 
