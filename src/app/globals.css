@@ -1,0 +1,99 @@
+@import "tailwindcss";
+
+/* Identidade SulCore: papel claro, azul-marinho e azul. */
+@theme {
+  --color-paper: #f3f0ea;
+  --color-paper-2: #ebe7df;
+  --color-paper-3: #e1dcd2;
+  --color-ink: #062b52;
+  --color-ink-2: #0c3a6b;
+  --color-ink-3: #12497f;
+  --color-blue: #3b8be0;
+  --color-blue-soft: #8dbbea;
+  --color-blue-pale: #cbdbea;
+  --color-mist: #eaf2fb;
+  --color-stone: #6f6b63;
+  --color-stone-2: #8a867e;
+  --color-ok: #2f9e6e;
+
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+
+  --animate-blink: blink 1.1s steps(1) infinite;
+  --animate-pulse-dot: pulse-dot 1.4s ease-in-out infinite;
+
+  @keyframes blink {
+    50% { opacity: 0; }
+  }
+  @keyframes pulse-dot {
+    0%, 100% { opacity: 0.35; }
+    50% { opacity: 1; }
+  }
+}
+
+:root {
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  font-feature-settings: "ss01", "cv11";
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: var(--color-blue);
+  color: white;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-blue);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* Rótulo técnico: o "SOFTWARE DEVELOPMENT" do logo. */
+.label {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+/* Grade de engenharia, sutil, para áreas de fundo. */
+.grid-paper {
+  background-image:
+    linear-gradient(to right, rgb(6 43 82 / 0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(6 43 82 / 0.06) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+.grid-ink {
+  background-image:
+    linear-gradient(to right, rgb(234 242 251 / 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(234 242 251 / 0.05) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+.js .reveal {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 0.7s cubic-bezier(0.2, 0.7, 0.2, 1), transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.js .reveal.is-in {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .js .reveal { opacity: 1; transform: none; transition: none; }
+  *, *::before, *::after { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; }
+}
