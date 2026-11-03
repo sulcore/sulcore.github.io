@@ -106,11 +106,12 @@ const pt = {
       "Fazemos sistemas de gestão, e-commerce, soluções de IA, integrações, sites e vídeos comerciais. No Nivela fizemos tudo isso: o produto, o marketing e os vídeos. Seja um projeto do dia a dia ou um caso avançado, o cuidado é o mesmo: arquitetura pensada, decisões registradas e entrega testada.",
     columns: { left: "O que é comum", right: "Como a SulCore faz" },
     rows: [
+      ["Um fornecedor para cada pedaço, e ninguém junta", "Sistema, loja, site e vídeo com a mesma equipe e o mesmo padrão"],
+      ["Loja e site que não conversam com o estoque nem com o financeiro", "E-commerce e site integrados ao sistema, sem digitar duas vezes"],
+      ["IA que impressiona na demonstração e erra no dia a dia", "IA com confirmação, permissões, avaliação e teto de custo"],
       ["Regra de negócio espalhada pelas telas", "Regra em um só lugar, reaproveitada por tela, API e IA"],
-      ["Ninguém sabe por que foi feito assim", "Toda decisão de arquitetura registrada e justificada"],
       ["Teste é o cliente usando", "Baterias de testes e quality gates antes de cada entrega"],
-      ["Integração que quebra em silêncio", "Webhooks idempotentes, filas e monitoramento de erro"],
-      ["Sistema que só o desenvolvedor entende", "Interface pensada para quem usa todo dia"],
+      ["Material comercial genérico, de banco de imagem", "Vídeos e conteúdo feitos a partir do produto real"],
     ] as [string, string][],
   },
   services: {
@@ -425,11 +426,12 @@ const en: Dict = {
       "We build management systems, e-commerce, AI solutions, integrations, websites and commercial videos. We did all of that for Nivela: the product, the marketing and the videos. Whether it's an everyday project or an advanced one, the care is the same: thoughtful architecture, recorded decisions and tested delivery.",
     columns: { left: "What's common", right: "How SulCore does it" },
     rows: [
+      ["A different vendor for each piece, and nobody ties them together", "System, store, website and video by one team, to one standard"],
+      ["A store and website that don't talk to inventory or finance", "E-commerce and website connected to the system, no double entry"],
+      ["AI that shines in the demo and fails day to day", "AI with confirmation, permissions, evaluation and a cost ceiling"],
       ["Business rules scattered across screens", "Rules in one place, reused by UI, API and AI"],
-      ["Nobody knows why it was built that way", "Every architecture decision recorded and justified"],
       ["Testing means the customer using it", "Test suites and quality gates before every delivery"],
-      ["Integrations that fail silently", "Idempotent webhooks, queues and error monitoring"],
-      ["Software only the developer understands", "Interfaces designed for people who use them daily"],
+      ["Generic marketing material from stock libraries", "Videos and content made from the real product"],
     ],
   },
   services: {
