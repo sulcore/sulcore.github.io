@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-/* Identidade SulCore: papel claro, azul-marinho e azul. */
+/* Identidade SulCore: azul-marinho, azul e papel. Tema escuro é o padrão (data-theme="dark"). */
 @theme {
   --color-paper: #f3f0ea;
   --color-paper-2: #ebe7df;
@@ -15,6 +15,9 @@
   --color-stone: #6f6b63;
   --color-stone-2: #8a867e;
   --color-ok: #2f9e6e;
+  --color-fg: #062b52;
+  --color-cta: #062b52;
+  --color-cta-2: #0c3a6b;
 
   --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
   --font-mono: var(--font-geist-mono), ui-monospace, monospace;
@@ -33,6 +36,25 @@
 
 :root {
   color-scheme: light;
+  --grid-line: rgb(6 43 82 / 0.06);
+}
+
+/* Tema escuro = o marinho da marca (#062B52, como na versão escura do logo); painéis ficam num marinho mais fundo. */
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --grid-line: rgb(141 187 234 / 0.07);
+  --color-paper: #062b52;
+  --color-paper-2: #05264a;
+  --color-paper-3: #0e3a6a;
+  --color-fg: #eaf2fb;
+  --color-stone: #a3bedb;
+  --color-stone-2: #7f9fc4;
+  --color-ink: #041c37;
+  --color-ink-2: #0a3260;
+  --color-blue: #4f9be8;
+  --color-cta: #2a6fc0;
+  --color-cta-2: #3b8be0;
+  --color-blue-pale: #2f5683;
 }
 
 html {
@@ -42,7 +64,7 @@ html {
 
 body {
   background: var(--color-paper);
-  color: var(--color-ink);
+  color: var(--color-fg);
   font-family: var(--font-sans);
   font-feature-settings: "ss01", "cv11";
   -webkit-font-smoothing: antialiased;
@@ -71,8 +93,8 @@ body {
 /* Grade de engenharia, sutil, para áreas de fundo. */
 .grid-paper {
   background-image:
-    linear-gradient(to right, rgb(6 43 82 / 0.06) 1px, transparent 1px),
-    linear-gradient(to bottom, rgb(6 43 82 / 0.06) 1px, transparent 1px);
+    linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
   background-size: 48px 48px;
 }
 .grid-ink {

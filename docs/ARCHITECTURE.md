@@ -63,14 +63,21 @@ Locally `PAGES_BASE_PATH` is empty and the site runs at the root. See
 ## Design tokens
 
 Defined once in `src/app/globals.css` under `@theme` and used as Tailwind utilities
-(`bg-ink`, `text-blue`, `bg-paper`…):
+(`bg-paper`, `text-fg`, `bg-ink`, `text-blue`…). The dark theme is the default and is the
+brand navy, like the dark version of the logo; light is opt-in.
 
-| Token | Value | Use |
-|---|---|---|
-| `ink` | `#062b52` | primary text, dark sections |
-| `blue` | `#3b8be0` | brand accent, actions |
-| `paper` | `#f3f0ea` | page background |
-| `mist` | `#eaf2fb` | text on dark |
+| Token | Dark (default) | Light | Use |
+|---|---|---|---|
+| `paper` | `#062b52` | `#f3f0ea` | page background |
+| `fg` | `#eaf2fb` | `#062b52` | text on the page |
+| `ink` | `#041c37` | `#062b52` | navy panels (console, case, contact, footer) |
+| `cta` | `#2a6fc0` | `#062b52` | primary buttons |
+| `blue` | `#4f9be8` | `#3b8be0` | brand accent |
+| `mist` | `#eaf2fb` | `#eaf2fb` | text on navy panels |
+
+The theme lives in `<html data-theme>`. A tiny inline script in `[locale]/layout.tsx` applies
+the saved choice (`localStorage.theme`) before first paint, so there is no flash;
+`ThemeToggle` switches it.
 
 Fonts: Geist Sans and Geist Mono, self-hosted through the `geist` package.
 

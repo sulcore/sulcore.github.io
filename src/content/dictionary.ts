@@ -22,6 +22,7 @@ const pt = {
     process: "Como trabalhamos",
     team: "Equipe",
     cta: "Mandar mensagem",
+    theme: { toDark: "Usar tema escuro", toLight: "Usar tema claro" },
   },
   hero: {
     eyebrow: "Software development · Novo Hamburgo, RS",
@@ -98,10 +99,10 @@ const pt = {
     ] as Scenario[],
   },
   problem: {
-    eyebrow: "De onde viemos",
-    title: "Nascemos dentro de um ERP legado. Sabemos o que não fazer.",
+    eyebrow: "Por que a SulCore",
+    title: "Sistema de gestão não pode depender de sorte.",
     body:
-      "Antes da SulCore, passamos anos desenvolvendo e mantendo um ERP de grande porte para fábricas, empresas de monitoramento, importadoras e exportadoras. Foi lá que aprendemos regra de negócio de verdade, e também o preço de um sistema construído sem arquitetura: cada mudança quebra outra coisa, e quem paga é o cliente.",
+      "Temos experiência com ERPs e sistemas de gestão, e sabemos onde eles costumam dar errado: regra de negócio espalhada, decisão que ninguém registrou, integração que falha sem avisar. Na SulCore, cada projeto nasce com arquitetura pensada para que mudar uma parte não quebre outra.",
     columns: { left: "O que é comum", right: "Como a SulCore faz" },
     rows: [
       ["Regra de negócio espalhada pelas telas", "Regra em um só lugar, reaproveitada por tela, API e IA"],
@@ -278,14 +279,14 @@ const pt = {
       {
         initials: "JV",
         name: "João Vargas",
-        role: "Fundador · Produto e engenharia",
-        bio: "Veio de anos desenvolvendo um ERP de grande porte para fábricas, empresas de monitoramento, importadoras e exportadoras. Cuida de produto, arquitetura, desenvolvimento e da esteira de engenharia.",
+        role: "Desenvolvedor",
+        bio: "Produto, arquitetura e desenvolvimento. Experiência com ERPs e sistemas de gestão. Um dos criadores do Nivela.",
       },
       {
         initials: "TH",
         name: "Theilor Pies",
-        role: "Co-fundador · Produto e desenvolvimento",
-        bio: "Co-idealizador do Nivela. Transforma problema de negócio em ideia de produto e atua no desenvolvimento de ponta a ponta.",
+        role: "Desenvolvedor",
+        bio: "Produto e desenvolvimento de ponta a ponta. Um dos criadores do Nivela.",
       },
     ],
   },
@@ -338,6 +339,7 @@ const en: Dict = {
     process: "How we work",
     team: "Team",
     cta: "Send a message",
+    theme: { toDark: "Use dark theme", toLight: "Use light theme" },
   },
   hero: {
     eyebrow: "Software development · Southern Brazil",
@@ -414,10 +416,10 @@ const en: Dict = {
     ],
   },
   problem: {
-    eyebrow: "Where we come from",
-    title: "We grew up inside a legacy ERP. We know what not to do.",
+    eyebrow: "Why SulCore",
+    title: "Business software shouldn't depend on luck.",
     body:
-      "Before SulCore, we spent years building and maintaining a large ERP for factories, monitoring companies, importers and exporters. That's where we learned real business rules — and the cost of software built without architecture: every change breaks something else, and the customer pays for it.",
+      "We have experience with ERPs and management systems, and we know where they usually go wrong: business rules scattered around, decisions nobody recorded, integrations that fail silently. At SulCore, every project starts with architecture designed so that changing one part doesn't break another.",
     columns: { left: "What's common", right: "How SulCore does it" },
     rows: [
       ["Business rules scattered across screens", "Rules in one place, reused by UI, API and AI"],
@@ -594,14 +596,14 @@ const en: Dict = {
       {
         initials: "JV",
         name: "João Vargas",
-        role: "Founder · Product & engineering",
-        bio: "Spent years building a large ERP for factories, monitoring companies, importers and exporters. Leads product, architecture, development and the engineering pipeline.",
+        role: "Developer",
+        bio: "Product, architecture and development. Experience with ERPs and management systems. One of the creators of Nivela.",
       },
       {
         initials: "TH",
         name: "Theilor Pies",
-        role: "Co-founder · Product & development",
-        bio: "Co-creator of Nivela. Turns business problems into product ideas and works on development end to end.",
+        role: "Developer",
+        bio: "Product and development end to end. One of the creators of Nivela.",
       },
     ],
   },

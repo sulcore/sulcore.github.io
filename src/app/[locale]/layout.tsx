@@ -7,6 +7,9 @@ import { LOCALES, SITE, asset, isLocale } from "@/content/site";
 import { RevealObserver } from "@/components/RevealObserver";
 import "../globals.css";
 
+// Roda antes da pintura: aplica o tema salvo (escuro por padrão) e marca que há JS.
+const THEME_SCRIPT = `(function(){var d=document.documentElement,t;try{t=localStorage.getItem("theme")}catch(e){}d.dataset.theme=t==="light"?"light":"dark";d.classList.add("js")})()`;
+
 export function generateStaticParams() {
   return LOCALES.map((locale) => ({ locale }));
 }
@@ -43,9 +46,14 @@ export default async function LocaleLayout({
   const { locale } = await params;
   if (!isLocale(locale)) notFound();
   return (
-    <html lang={locale === "pt" ? "pt-BR" : "en"} className={`${GeistSans.variable} ${GeistMono.variable}`}>
+    <html
+      lang={locale === "pt" ? "pt-BR" : "en"}
+      data-theme="dark"
+      className={`${GeistSans.variable} ${GeistMono.variable}`}
+      suppressHydrationWarning
+    >
       <head>
-        <script dangerouslySetInnerHTML={{ __html: "document.documentElement.classList.add('js')" }} />
+        <script dangerouslySetInnerHTML={{ __html: THEME_SCRIPT }} />
       </head>
       <body className="min-h-dvh overflow-x-clip">
         {children}

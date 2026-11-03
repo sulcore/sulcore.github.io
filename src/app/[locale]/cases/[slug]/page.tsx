@@ -73,11 +73,11 @@ export default async function CasePage({ params }: { params: Params }) {
           {c.ready ? (
             <div className="space-y-14">
               {blocks.map(([title, items]) => (
-                <div key={title} className="reveal grid gap-6 border-t border-ink/15 pt-8 md:grid-cols-[14rem_1fr]">
+                <div key={title} className="reveal grid gap-6 border-t border-fg/15 pt-8 md:grid-cols-[14rem_1fr]">
                   <h2 className="label text-blue">{title}</h2>
                   <ul className="space-y-4">
                     {items.map((it) => (
-                      <li key={it} className="flex gap-3 leading-relaxed text-ink/80">
+                      <li key={it} className="flex gap-3 leading-relaxed text-fg/80">
                         <span aria-hidden className="mt-2.5 size-1.5 shrink-0 rounded-full bg-blue" />
                         {it}
                       </li>
@@ -85,11 +85,11 @@ export default async function CasePage({ params }: { params: Params }) {
                   </ul>
                 </div>
               ))}
-              <div className="reveal grid gap-6 border-t border-ink/15 pt-8 md:grid-cols-[14rem_1fr]">
+              <div className="reveal grid gap-6 border-t border-fg/15 pt-8 md:grid-cols-[14rem_1fr]">
                 <h2 className="label text-blue">{d.casePage.stack}</h2>
                 <ul className="flex flex-wrap gap-2">
                   {c.stack.map((s) => (
-                    <li key={s} className="rounded-md bg-paper-2 px-3 py-1.5 font-mono text-sm ring-1 ring-ink/10">
+                    <li key={s} className="rounded-md bg-paper-2 px-3 py-1.5 font-mono text-sm ring-1 ring-fg/10">
                       {s}
                     </li>
                   ))}
@@ -99,7 +99,7 @@ export default async function CasePage({ params }: { params: Params }) {
           ) : (
             <div className="space-y-4">
               {[d.casePage.challenge, d.casePage.solution, d.casePage.stack, d.casePage.result].map((t) => (
-                <div key={t} className="grid gap-4 border-t border-ink/15 pt-6 md:grid-cols-[14rem_1fr]">
+                <div key={t} className="grid gap-4 border-t border-fg/15 pt-6 md:grid-cols-[14rem_1fr]">
                   <h2 className="label text-blue">{t}</h2>
                   <div aria-hidden className="space-y-2">
                     <span className="block h-3 w-4/5 rounded bg-paper-3" />
@@ -111,11 +111,11 @@ export default async function CasePage({ params }: { params: Params }) {
             </div>
           )}
 
-          <div className="mt-20 flex flex-col items-start gap-5 rounded-2xl bg-paper-2 p-8 ring-1 ring-ink/10 sm:flex-row sm:items-center sm:justify-between">
+          <div className="mt-20 flex flex-col items-start gap-5 rounded-2xl bg-paper-2 p-8 ring-1 ring-fg/10 sm:flex-row sm:items-center sm:justify-between">
             <p className="text-xl font-semibold tracking-[-0.02em]">{d.casePage.cta}</p>
             <Link
               href={`/${locale}/#contato`}
-              className="inline-flex h-11 items-center gap-2 rounded-lg bg-ink px-5 text-sm font-medium text-mist hover:bg-ink-2"
+              className="inline-flex h-11 items-center gap-2 rounded-lg bg-cta px-5 text-sm font-medium text-white hover:bg-cta-2"
             >
               {d.nav.cta} <span aria-hidden>→</span>
             </Link>
