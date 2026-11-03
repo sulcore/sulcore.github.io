@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { Dict } from "@/content/dictionary";
 import type { Locale } from "@/content/site";
 import { Logo } from "./Logo";
+import { HomeLink } from "./HomeLink";
 import { ThemeToggle } from "./ThemeToggle";
 
 export function Header({ dict, locale, altPath }: { dict: Dict; locale: Locale; altPath: string }) {
@@ -17,9 +18,9 @@ export function Header({ dict, locale, altPath }: { dict: Dict; locale: Locale; 
   return (
     <header className="sticky top-0 z-40 border-b border-fg/10 bg-paper/85 backdrop-blur-md">
       <div className="mx-auto flex h-16 max-w-6xl items-center gap-6 px-4 sm:px-6">
-        <Link href={base} className="shrink-0" aria-label="SulCore — início">
+        <HomeLink href={base} label={dict.nav.home} className="shrink-0">
           <Logo />
-        </Link>
+        </HomeLink>
         <nav className="ml-auto hidden items-center gap-6 text-sm text-fg/70 lg:flex" aria-label="Principal">
           {links.map(([href, label]) => (
             <Link key={href} href={href} className="transition-colors hover:text-fg">
