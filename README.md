@@ -3,8 +3,8 @@
   Custom software, properly engineered.
 </p>
 
-[![CI](https://github.com/sulcore/sulcore-site/actions/workflows/ci.yml/badge.svg)](https://github.com/sulcore/sulcore-site/actions/workflows/ci.yml)
-[![Deploy](https://github.com/sulcore/sulcore-site/actions/workflows/deploy.yml/badge.svg)](https://github.com/sulcore/sulcore-site/actions/workflows/deploy.yml)
+[![CI](https://github.com/sulcore/sulcore.github.io/actions/workflows/ci.yml/badge.svg)](https://github.com/sulcore/sulcore.github.io/actions/workflows/ci.yml)
+[![Deploy](https://github.com/sulcore/sulcore.github.io/actions/workflows/deploy.yml/badge.svg)](https://github.com/sulcore/sulcore.github.io/actions/workflows/deploy.yml)
 ![Next.js](https://img.shields.io/badge/Next.js-16-062b52)
 ![TypeScript](https://img.shields.io/badge/TypeScript-strict-3b8be0)
 ![License](https://img.shields.io/badge/code-MIT-8dbbea)

@@ -7,6 +7,10 @@ updates:
     groups:
       dependencies:
         patterns: ["*"]
+    ignore:
+      # Tipos do Node acompanham a versão do runtime (.nvmrc), não a última publicada.
+      - dependency-name: "@types/node"
+        update-types: ["version-update:semver-major"]
   - package-ecosystem: github-actions
     directory: /
     schedule:

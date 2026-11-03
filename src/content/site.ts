@@ -3,7 +3,7 @@ export const SITE = {
   name: "SulCore",
   // Endereço público. Troque quando o domínio próprio existir (ver docs/DEPLOY.md).
   url: "https://sulcore.github.io",
-  repo: "https://github.com/sulcore/sulcore-site",
+  repo: "https://github.com/sulcore/sulcore.github.io",
   // Número com DDI e DDD, só dígitos (ex.: "5551999999999"). Vazio = botão copia a mensagem.
   whatsapp: "5551981821970",
   email: "",
