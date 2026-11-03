@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import { GeistSans } from "geist/font/sans";
 import { GeistMono } from "geist/font/mono";
 import { getDict } from "@/content/dictionary";
-import { LOCALES, SITE, isLocale } from "@/content/site";
+import { LOCALES, SITE, asset, isLocale } from "@/content/site";
 import { RevealObserver } from "@/components/RevealObserver";
 import "../globals.css";
 
@@ -19,8 +19,8 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     metadataBase: new URL(SITE.url),
     title: dict.meta.title,
     description: dict.meta.description,
-    icons: { icon: "/favicon.svg" },
-    alternates: { languages: { "pt-BR": "/pt/", en: "/en/" } },
+    icons: { icon: asset("/favicon.svg") },
+    alternates: { languages: { "pt-BR": asset("/pt/"), en: asset("/en/") } },
     openGraph: {
       title: dict.meta.title,
       description: dict.meta.description,

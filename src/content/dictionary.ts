@@ -308,6 +308,7 @@ const pt = {
   },
   footer: {
     tagline: "Software development",
+    source: "Código-fonte deste site",
     rights: "Todos os direitos reservados.",
     language: "English",
   },
@@ -623,6 +624,7 @@ const en: Dict = {
   },
   footer: {
     tagline: "Software development",
+    source: "Source code of this site",
     rights: "All rights reserved.",
     language: "Português",
   },

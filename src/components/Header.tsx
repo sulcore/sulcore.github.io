@@ -21,9 +21,9 @@ export function Header({ dict, locale, altPath }: { dict: Dict; locale: Locale; 
         </Link>
         <nav className="ml-auto hidden items-center gap-6 text-sm text-ink/70 lg:flex" aria-label="Principal">
           {links.map(([href, label]) => (
-            <a key={href} href={href} className="transition-colors hover:text-ink">
+            <Link key={href} href={href} className="transition-colors hover:text-ink">
               {label}
-            </a>
+            </Link>
           ))}
         </nav>
         <div className="ml-auto flex items-center gap-3 lg:ml-0">
@@ -34,12 +34,12 @@ export function Header({ dict, locale, altPath }: { dict: Dict; locale: Locale; 
           >
             {other.toUpperCase()}
           </Link>
-          <a
+          <Link
             href={`${base}#contato`}
             className="inline-flex h-9 items-center rounded-lg bg-ink px-3.5 text-sm font-medium text-mist transition-colors hover:bg-ink-2"
           >
             {dict.nav.cta}
-          </a>
+          </Link>
         </div>
       </div>
     </header>

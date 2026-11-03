@@ -1,0 +1,23 @@
+name: Problema no site
+description: Algo quebrado, fora do lugar ou errado no site.
+labels: [bug]
+body:
+  - type: input
+    id: page
+    attributes:
+      label: Página
+      placeholder: https://sulcore.github.io/pt/
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: O que aconteceu
+      description: O que você esperava e o que viu. Prints ajudam.
+    validations:
+      required: true
+  - type: input
+    id: device
+    attributes:
+      label: Navegador e aparelho
+      placeholder: Safari no iPhone 15

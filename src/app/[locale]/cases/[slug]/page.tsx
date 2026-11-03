@@ -3,7 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getDict } from "@/content/dictionary";
 import { CASE_SLUGS, getCase } from "@/content/cases";
-import { LOCALES, isLocale } from "@/content/site";
+import { LOCALES, asset, isLocale } from "@/content/site";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { VideoShowcase } from "@/components/VideoShowcase";
@@ -19,7 +19,12 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
   const { locale, slug } = await params;
   if (!isLocale(locale)) return {};
   const c = getCase(locale, slug);
-  return c ? { title: `${c.client} — SulCore`, description: c.headline } : {};
+  if (!c) return {};
+  return {
+    title: `${c.client} — SulCore`,
+    description: c.headline,
+    alternates: { languages: { "pt-BR": asset(`/pt/cases/${slug}/`), en: asset(`/en/cases/${slug}/`) } },
+  };
 }
 
 export default async function CasePage({ params }: { params: Params }) {

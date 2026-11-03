@@ -17,6 +17,9 @@ export function Footer({ dict, locale, altPath }: { dict: Dict; locale: Locale; 
               {SITE.email}
             </a>
           )}
+          <a href={SITE.repo} target="_blank" rel="noopener" className="font-mono text-xs hover:text-mist">
+            {dict.footer.source} ↗
+          </a>
           <Link href={altPath} hrefLang={locale === "pt" ? "en" : "pt"} className="hover:text-mist">
             {dict.footer.language}
           </Link>

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { asset } from "@/content/site";
 
 // Telas reais do Nivela, gravadas com um negócio de exemplo.
 export function VideoShowcase({ videos }: { videos: [string, string][] }) {
@@ -22,8 +23,8 @@ export function VideoShowcase({ videos }: { videos: [string, string][] }) {
         <video
           key={file}
           className="aspect-[1920/1200] w-full"
-          src={`/video/${file}.mp4`}
-          poster={`/video/${file}.jpg`}
+          src={asset(`/video/${file}.mp4`)}
+          poster={asset(`/video/${file}.jpg`)}
           autoPlay
           muted
           loop

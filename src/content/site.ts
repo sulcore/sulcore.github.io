@@ -1,8 +1,9 @@
-// Configuração única do site. Preencha antes de publicar (ver docs/DIRECAO.md §8).
+// Configuração única do site: contato, endereço público e repositório.
 export const SITE = {
   name: "SulCore",
-  // Domínio definitivo ainda não existe; troque quando registrar.
-  url: "https://sulcore.dev",
+  // Endereço público. Troque quando o domínio próprio existir (ver docs/DEPLOY.md).
+  url: "https://sulcore.github.io",
+  repo: "https://github.com/sulcore/sulcore-site",
   // Número com DDI e DDD, só dígitos (ex.: "5551999999999"). Vazio = botão copia a mensagem.
   whatsapp: "5551981821970",
   email: "",
@@ -11,6 +12,13 @@ export const SITE = {
 
 export const LOCALES = ["pt", "en"] as const;
 export type Locale = (typeof LOCALES)[number];
+
+// Prefixo do GitHub Pages para caminhos que não passam pelo <Link> do Next (vídeo, ícone).
+export const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+
+export function asset(path: string): string {
+  return `${BASE_PATH}${path}`;
+}
 
 export function isLocale(value: string): value is Locale {
   return (LOCALES as readonly string[]).includes(value);
