@@ -16,7 +16,7 @@ export function Logo({ tone = "light", size = "sm", tagline = false }: Props) {
       />
       <span className="flex flex-col leading-none">
         <span className={`${big ? "text-4xl" : "text-[1.35rem]"} relative w-fit font-semibold tracking-[-0.03em]`}>
-          <span className={dark ? "text-mist" : "text-ink"}>Sul</span>
+          <span className={dark ? "text-mist" : "text-fg"}>Sul</span>
           <span className="text-blue">Core</span>
           <span aria-hidden className={`absolute top-0 flex gap-[3px] ${big ? "-right-7" : "-right-[22px]"}`}>
             <i className={`block size-[5px] rounded-full ${dark ? "bg-blue-soft" : "bg-blue"} group-hover:animate-pulse-dot`} />

@@ -1,5 +1,10 @@
 # Changelog
 
+## 2026-11-04
+
+- Dark theme (brand navy) is now the default, with a light/dark toggle in the header; the choice is remembered.
+- "Why SulCore" section and team bios rewritten to talk about SulCore, not past employers; roles shown as "Developer".
+
 ## 2026-11-03
 
 - Repository renamed to `sulcore/sulcore.github.io`; the site now lives at https://sulcore.github.io/.
