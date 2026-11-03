@@ -42,7 +42,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
                   {d.hero.primary} <span aria-hidden>→</span>
                 </a>
                 <a
-                  href="#nivela"
+                  href="#cases"
                   className="inline-flex h-12 items-center rounded-lg px-5 font-medium text-fg ring-1 ring-fg/20 transition hover:bg-fg/5 hover:ring-fg/40"
                 >
                   {d.hero.secondary}

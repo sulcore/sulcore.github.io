@@ -29,9 +29,9 @@ const pt = {
     eyebrow: "Software development · Novo Hamburgo, RS",
     title: ["Software sob medida,", "com engenharia de verdade."],
     lead:
-      "Construímos sistemas de gestão, integrações e IA aplicada aos processos da sua empresa. Do jeito que um sistema deveria ser: claro para quem usa, sólido por dentro e pronto para crescer.",
+      "Construímos sistemas, e-commerce, integrações, soluções de IA e a presença digital da sua empresa. Do jeito que tecnologia deveria ser: clara para quem usa, sólida por dentro e pronta para crescer.",
     primary: "Conte seu projeto",
-    secondary: "Ver o case Nivela",
+    secondary: "Ver cases",
     proof: [
       ["ERP SaaS", "em produção, construído por nós"],
       ["PT · EN", "Brasil e exterior"],
@@ -101,9 +101,9 @@ const pt = {
   },
   problem: {
     eyebrow: "Por que a SulCore",
-    title: "Sistema de gestão não pode depender de sorte.",
+    title: "Do sistema interno à vitrine, a mesma engenharia.",
     body:
-      "Temos experiência com ERPs e sistemas de gestão, e sabemos onde eles costumam dar errado: regra de negócio espalhada, decisão que ninguém registrou, integração que falha sem avisar. Na SulCore, cada projeto nasce com arquitetura pensada para que mudar uma parte não quebre outra.",
+      "Fazemos sistemas de gestão, e-commerce, soluções de IA, integrações, sites e vídeos comerciais. No Nivela fizemos tudo isso: o produto, o marketing e os vídeos. Seja um projeto do dia a dia ou um caso avançado, o cuidado é o mesmo: arquitetura pensada, decisões registradas e entrega testada.",
     columns: { left: "O que é comum", right: "Como a SulCore faz" },
     rows: [
       ["Regra de negócio espalhada pelas telas", "Regra em um só lugar, reaproveitada por tela, API e IA"],
@@ -157,6 +157,7 @@ const pt = {
         name: "Presença digital e comercial",
         summary: "A parte que o cliente vê, com o mesmo cuidado da parte de dentro.",
         items: [
+          "E-commerce integrado a estoque, pagamento e nota fiscal",
           "Sites e landing pages pensadas para conversão",
           "Vídeos comerciais com estética de cinema para produto, marca e anúncio",
           "Chat comercial que qualifica o visitante e gera lead",
@@ -347,9 +348,9 @@ const en: Dict = {
     eyebrow: "Software development · Southern Brazil",
     title: ["Custom software,", "properly engineered."],
     lead:
-      "We build management systems, integrations and AI that works inside your company's processes. The way software should be: clear for the people using it, solid on the inside, ready to grow.",
+      "We build systems, e-commerce, integrations, AI solutions and your company's digital presence. The way technology should be: clear for the people using it, solid on the inside, ready to grow.",
     primary: "Tell us about your project",
-    secondary: "See the Nivela case",
+    secondary: "See our cases",
     proof: [
       ["SaaS ERP", "in production, built by us"],
       ["EN · PT", "Brazil and abroad"],
@@ -419,9 +420,9 @@ const en: Dict = {
   },
   problem: {
     eyebrow: "Why SulCore",
-    title: "Business software shouldn't depend on luck.",
+    title: "From internal systems to the storefront, the same engineering.",
     body:
-      "We have experience with ERPs and management systems, and we know where they usually go wrong: business rules scattered around, decisions nobody recorded, integrations that fail silently. At SulCore, every project starts with architecture designed so that changing one part doesn't break another.",
+      "We build management systems, e-commerce, AI solutions, integrations, websites and commercial videos. We did all of that for Nivela: the product, the marketing and the videos. Whether it's an everyday project or an advanced one, the care is the same: thoughtful architecture, recorded decisions and tested delivery.",
     columns: { left: "What's common", right: "How SulCore does it" },
     rows: [
       ["Business rules scattered across screens", "Rules in one place, reused by UI, API and AI"],
@@ -475,6 +476,7 @@ const en: Dict = {
         name: "Digital & commercial presence",
         summary: "The part customers see, built with the same care as the inside.",
         items: [
+          "E-commerce connected to inventory, payments and invoicing",
           "Websites and landing pages designed to convert",
           "Cinematic commercial videos for product, brand and ads",
           "Sales chat that qualifies visitors and captures leads",
