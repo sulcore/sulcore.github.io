@@ -2,13 +2,16 @@ import Link from "next/link";
 import type { Dict } from "@/content/dictionary";
 import { SITE, type Locale } from "@/content/site";
 import { Logo } from "./Logo";
+import { HomeLink } from "./HomeLink";
 
 export function Footer({ dict, locale, altPath }: { dict: Dict; locale: Locale; altPath: string }) {
   return (
     <footer className="bg-ink text-mist/70">
       <div className="mx-auto flex max-w-6xl flex-col gap-8 border-t border-white/10 px-4 py-12 sm:px-6 md:flex-row md:items-end md:justify-between">
         <div>
-          <Logo tone="dark" tagline />
+          <HomeLink href={`/${locale}/`} label={dict.nav.home} className="inline-block">
+            <Logo tone="dark" tagline />
+          </HomeLink>
           <p className="mt-5 font-mono text-xs text-mist/45">{SITE.base}</p>
         </div>
         <div className="flex flex-col gap-2 text-sm md:items-end">

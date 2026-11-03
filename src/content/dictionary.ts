@@ -22,6 +22,7 @@ const pt = {
     process: "Como trabalhamos",
     team: "Equipe",
     cta: "Mandar mensagem",
+    home: "SulCore — voltar ao início",
     theme: { toDark: "Usar tema escuro", toLight: "Usar tema claro" },
   },
   hero: {
@@ -339,6 +340,7 @@ const en: Dict = {
     process: "How we work",
     team: "Team",
     cta: "Send a message",
+    home: "SulCore — back to top",
     theme: { toDark: "Use dark theme", toLight: "Use light theme" },
   },
   hero: {
