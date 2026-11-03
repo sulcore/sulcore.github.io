@@ -283,7 +283,7 @@ const pt = {
       },
       {
         initials: "TH",
-        name: "Theilor",
+        name: "Theilor Pies",
         role: "Co-fundador · Produto e desenvolvimento",
         bio: "Co-idealizador do Nivela. Transforma problema de negócio em ideia de produto e atua no desenvolvimento de ponta a ponta.",
       },
@@ -598,7 +598,7 @@ const en: Dict = {
       },
       {
         initials: "TH",
-        name: "Theilor",
+        name: "Theilor Pies",
         role: "Co-founder · Product & development",
         bio: "Co-creator of Nivela. Turns business problems into product ideas and works on development end to end.",
       },
