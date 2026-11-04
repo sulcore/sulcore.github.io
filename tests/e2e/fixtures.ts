@@ -19,8 +19,8 @@ export const PAGES = [
   "/en/",
   "/pt/cases/nivela/",
   "/en/cases/nivela/",
-  "/pt/cases/eletrica-moro/",
-  "/en/cases/eletrica-moro/",
+  "/pt/cases/repara/",
+  "/en/cases/repara/",
   "/pt/build/",
   "/en/build/",
 ];

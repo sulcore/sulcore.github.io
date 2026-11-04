@@ -13,7 +13,7 @@ export type CaseStudy = {
   link?: { href: string; label: string };
 };
 
-export const CASE_SLUGS = ["nivela", "eletrica-moro"] as const;
+export const CASE_SLUGS = ["nivela", "repara"] as const;
 
 const cases: Record<Locale, Record<string, CaseStudy>> = {
   pt: {
@@ -58,16 +58,43 @@ const cases: Record<Locale, Record<string, CaseStudy>> = {
       ],
       link: { href: "https://www.nivelaerp.com.br/", label: "nivelaerp.com.br" },
     },
-    "eletrica-moro": {
-      slug: "eletrica-moro",
-      client: "Elétrica Moro",
-      kind: "Sistema sob medida",
-      headline: "Sistema sob medida para a gestão da prestação de serviços de uma empresa de instalações elétricas.",
-      ready: false,
-      challenge: [],
-      solution: [],
-      stack: [],
-      result: [],
+    repara: {
+      slug: "repara",
+      client: "Repara",
+      kind: "Produto próprio · em desenvolvimento",
+      headline: "O cliente pergunta se ficou pronto. O Repara responde.",
+      ready: true,
+      challenge: [
+        "Assistências técnicas autorizadas trabalham com WhatsApp lotado, planilha em cada setor e muito clique repetido para cada orçamento aprovado.",
+        "O cliente pergunta “já ficou pronto?” e quem atende não tem a OS na frente. Equipamento pronto fica na prateleira sem aviso, peça chega e não vira nova data, visita é marcada em planilha.",
+      ],
+      solution: [
+        "Painel único da operação ligado ao WhatsApp oficial: cada conversa já mostra a OS, o status ao vivo e o histórico do cliente. Cliente esperando há mais de 15 minutos vira alerta.",
+        "Aprovação pelo WhatsApp: o cliente responde SIM ou NÃO e a OS anda sozinha. Técnico agendado, retirada calculada pela regra da loja (sábado, domingo e feriado) e cliente avisado, sem ninguém clicar.",
+        "IA de atendimento que consulta o status real da OS e responde a qualquer hora. Nunca fala valor nem observação interna; o que depende da equipe vai para a equipe, com o motivo à vista.",
+        "Mesa de Visitas: a IA coleta endereço, fotos da etiqueta e vídeo do defeito, e a pré-análise cruza o código de erro com a base técnica oficial do fabricante para pedir a peça certa antes de o técnico sair. Quem confirma é sempre o técnico.",
+        "Peças: a nota fiscal entra por XML, PDF ou foto, cada item é casado com o pedido que o originou e vira aviso de retirada ou nova data de serviço.",
+        "Ensinar IA: a gestão comenta uma resposta e a IA transforma o comentário em regra, que pode ser editada, pausada ou excluída.",
+        "Segurança por padrão: a IA que fala com o cliente não grava dados nem envia nada a terceiros, regra coberta por teste. Agente novo entra em modo sombra, sugerindo antes de responder sozinho.",
+      ],
+      stack: [
+        "Python 3.12",
+        "FastAPI",
+        "SQLAlchemy",
+        "PostgreSQL",
+        "JavaScript",
+        "Tailwind CSS",
+        "WhatsApp Cloud API",
+        "OpenAI",
+        "Google Agenda",
+        "Playwright",
+        "Vercel",
+      ],
+      result: [
+        "Nasceu de um sistema que a SulCore construiu sob medida para uma assistência técnica autorizada, em uso todos os dias, inclusive no fim de semana, quando a IA atende sozinha.",
+        "Agora vira produto: multiempresa, com as regras de cada loja configuráveis (agenda, feriados, textos da IA e base técnica).",
+        "Cerca de 2.500 testes automatizados, 9 rotinas agendadas e CI a cada mudança. Nada vai para produção sem teste.",
+      ],
     },
   },
   en: {
@@ -112,16 +139,43 @@ const cases: Record<Locale, Record<string, CaseStudy>> = {
       ],
       link: { href: "https://www.nivelaerp.com.br/", label: "nivelaerp.com.br" },
     },
-    "eletrica-moro": {
-      slug: "eletrica-moro",
-      client: "Elétrica Moro",
-      kind: "Custom system",
-      headline: "A custom system to manage service delivery for an electrical installation company.",
-      ready: false,
-      challenge: [],
-      solution: [],
-      stack: [],
-      result: [],
+    repara: {
+      slug: "repara",
+      client: "Repara",
+      kind: "Own product · in development",
+      headline: "The customer asks if it's ready. Repara answers.",
+      ready: true,
+      challenge: [
+        "Authorized repair centers run on a crowded WhatsApp, a spreadsheet per department and the same clicks repeated for every approved quote.",
+        "The customer asks “is it ready yet?” and whoever answers doesn't have the job in front of them. Finished devices sit on the shelf unannounced, parts arrive without a new date, visits are booked in a spreadsheet.",
+      ],
+      solution: [
+        "One operations panel connected to the official WhatsApp: every conversation already shows the job, its live status and the customer's history. A customer waiting more than 15 minutes becomes an alert.",
+        "Approval over WhatsApp: the customer replies YES or NO and the job moves on its own. Technician scheduled, pickup date computed from the shop's rules (weekends and holidays) and customer notified, with no one clicking.",
+        "A customer-service AI that checks the job's real status and answers at any hour. It never mentions prices or internal notes; anything that needs the team goes to the team, with the reason on screen.",
+        "Visit desk: the AI collects the address, photos of the label and a video of the fault, and the pre-diagnosis matches the error code against the manufacturer's official technical material so the right part is ordered before the technician leaves. The technician always confirms.",
+        "Parts: the invoice comes in as XML, PDF or a photo, each item is matched to the order that created it and becomes a pickup notice or a new service date.",
+        "Teach the AI: managers comment on a reply and the AI turns the comment into a rule that can be edited, paused or deleted.",
+        "Safe by default: the AI that talks to customers can't write data or send anything to third parties, a rule covered by tests. A new agent starts in shadow mode, suggesting before it answers on its own.",
+      ],
+      stack: [
+        "Python 3.12",
+        "FastAPI",
+        "SQLAlchemy",
+        "PostgreSQL",
+        "JavaScript",
+        "Tailwind CSS",
+        "WhatsApp Cloud API",
+        "OpenAI",
+        "Google Calendar",
+        "Playwright",
+        "Vercel",
+      ],
+      result: [
+        "Born from a system SulCore built for an authorized repair center, used every day, weekends included, when the AI answers on its own.",
+        "Now it becomes a product: multi-company, with each shop's rules configurable (schedule, holidays, AI wording and technical material).",
+        "About 2,500 automated tests, 9 scheduled jobs and CI on every change. Nothing reaches production untested.",
+      ],
     },
   },
 };

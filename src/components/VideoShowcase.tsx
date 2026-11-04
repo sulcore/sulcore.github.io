@@ -3,8 +3,14 @@
 import { useState } from "react";
 import { asset } from "@/content/site";
 
-// Telas reais do Nivela, gravadas com um negócio de exemplo.
-export function VideoShowcase({ videos }: { videos: [string, string][] }) {
+// Telas reais de um produto (Nivela, Repara), gravadas com um negócio de exemplo.
+export function VideoShowcase({
+  videos,
+  address = "app.nivelaerp.com.br",
+}: {
+  videos: [string, string][];
+  address?: string;
+}) {
   const [active, setActive] = useState(0);
   const [file] = videos[active];
   return (
@@ -17,7 +23,7 @@ export function VideoShowcase({ videos }: { videos: [string, string][] }) {
             <i className="block size-2 rounded-full bg-white/20" />
           </span>
           <span className="mx-auto rounded bg-white/5 px-3 py-0.5 font-mono text-[0.68rem] text-white/60">
-            app.nivelaerp.com.br
+            {address}
           </span>
         </div>
         <video
