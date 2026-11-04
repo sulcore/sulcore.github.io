@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-11-04 · SEO and 404
+
+- Sitemap with `hreflang`, robots.txt, canonical URLs, Open Graph/Twitter tags and Organization JSON-LD.
+- Share image per language (`/pt/og.png`, `/en/og.png`) generated at build time.
+- Branded, bilingual 404 page. ADR-0007.
+
 ## 2026-11-04 · quality gates
 
 - ESLint (Next.js + TypeScript) and Prettier in CI; hooks issues fixed with `useSyncExternalStore`.

@@ -11,3 +11,4 @@ New decision → copy the format of an existing file, take the next number, open
 | [0004](0004-github-pages.md) | GitHub Pages with Actions and a configurable base path | Accepted |
 | [0005](0005-testing-strategy.md) | Pure logic in unit tests, behavior in real browsers | Accepted |
 | [0006](0006-quality-gates.md) | Lint, format, accessibility and Lighthouse budgets | Accepted |
+| [0007](0007-seo-and-404.md) | SEO, share images and a bilingual 404, generated at build time | Accepted |

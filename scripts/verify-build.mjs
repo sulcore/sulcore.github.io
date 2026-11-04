@@ -15,6 +15,10 @@ const REQUIRED = [
   "en/cases/nivela/index.html",
   "pt/cases/eletrica-moro/index.html",
   "en/cases/eletrica-moro/index.html",
+  "robots.txt",
+  "sitemap.xml",
+  "pt/og.png",
+  "en/og.png",
 ];
 
 const errors = [];
@@ -57,6 +61,19 @@ for (const file of htmlFiles(OUT)) {
       errors.push(`${page}: falta hreflang pt-BR/en`);
     }
   }
+}
+
+// Toda URL do sitemap tem de existir no export (o domínio é trocado pelo caminho local).
+if (existsSync(join(OUT, "sitemap.xml"))) {
+  const xml = readFileSync(join(OUT, "sitemap.xml"), "utf8");
+  const locs = [...xml.matchAll(/<loc>([^<]+)<\/loc>/g)].map(([, u]) => new URL(u).pathname);
+  if (locs.length === 0) errors.push("sitemap.xml: nenhuma URL");
+  for (const path of locs) if (!resolves(path)) errors.push(`sitemap.xml: ${path} não existe no export`);
+}
+
+// O 404 do Pages tem de ser a nossa página, não a padrão do Next.
+if (existsSync(join(OUT, "404.html")) && !readFileSync(join(OUT, "404.html"), "utf8").includes("SulCore")) {
+  errors.push("404.html: não é a página própria");
 }
 
 const home = existsSync(join(OUT, "pt/index.html")) ? readFileSync(join(OUT, "pt/index.html"), "utf8") : "";

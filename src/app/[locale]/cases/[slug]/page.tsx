@@ -3,7 +3,8 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getDict } from "@/content/dictionary";
 import { CASE_SLUGS, getCase } from "@/content/cases";
-import { LOCALES, asset, isLocale } from "@/content/site";
+import { LOCALES, isLocale } from "@/content/site";
+import { absoluteUrl, alternates } from "@/lib/seo";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { VideoShowcase } from "@/components/VideoShowcase";
@@ -23,7 +24,7 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
   return {
     title: `${c.client} — SulCore`,
     description: c.headline,
-    alternates: { languages: { "pt-BR": asset(`/pt/cases/${slug}/`), en: asset(`/en/cases/${slug}/`) } },
+    alternates: { canonical: absoluteUrl(locale, `cases/${slug}/`), languages: alternates(`cases/${slug}/`) },
   };
 }
 
