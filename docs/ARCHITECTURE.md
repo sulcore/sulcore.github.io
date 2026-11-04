@@ -86,7 +86,9 @@ Fonts: Geist Sans and Geist Mono, self-hosted through the `geist` package.
 | Step | Where | What fails it |
 |---|---|---|
 | `tsc --noEmit` | CI, deploy | type errors, missing translation keys |
+| `vitest run` | CI, deploy | broken demo/contact logic, languages out of sync, incomplete case |
 | `next build` | CI, deploy | build errors |
 | `scripts/verify-build.mjs` | CI, deploy | missing required page, broken internal link or asset, page without `hreflang`, missing contact section |
+| `playwright test` | CI | JS error or 4xx on any page, horizontal scroll, broken theme, logo, demo, language switch or WhatsApp link — on desktop and mobile |
 
-Deploy only publishes if all three pass.
+Deploy only publishes if its gates pass. Testing approach: [ADR-0005](adr/0005-testing-strategy.md).

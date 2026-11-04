@@ -3,6 +3,7 @@
 import { useState } from "react";
 import type { Dict } from "@/content/dictionary";
 import { SITE } from "@/content/site";
+import { buildMessage, whatsappLink } from "@/lib/whatsapp";
 
 // Monta a mensagem e abre o WhatsApp já preenchido. Sem número configurado, copia o texto.
 export function ContactComposer({ copy }: { copy: Dict["contact"] }) {
@@ -11,13 +12,9 @@ export function ContactComposer({ copy }: { copy: Dict["contact"] }) {
   const [msg, setMsg] = useState("");
   const [copied, setCopied] = useState(false);
 
-  const lines = [copy.greeting, "", `${copy.typeLabel}: ${type}`];
-  if (who.trim()) lines.push(`${copy.nameLabel}: ${who.trim()}`);
-  lines.push("", msg.trim());
-  const text = lines.join("\n").trim();
-
-  const hasNumber = SITE.whatsapp.length > 0;
-  const href = hasNumber ? `https://wa.me/${SITE.whatsapp}?text=${encodeURIComponent(text)}` : undefined;
+  const text = buildMessage(copy, { type, who, msg });
+  const href = whatsappLink(SITE.whatsapp, text);
+  const hasNumber = href !== null;
 
   async function copyText() {
     try {

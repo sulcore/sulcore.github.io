@@ -7,7 +7,7 @@ something broken are always welcome.
 
 1. Create a branch from `main`: `feat/…`, `fix/…`, `content/…`, `docs/…`.
 2. Keep each pull request about one thing.
-3. Run `npm run check` before pushing. CI runs the same steps.
+3. Run `npm run check` and `npm run test:e2e` before pushing. CI runs the same steps.
 4. Fill in the pull request template.
 
 ## Rules

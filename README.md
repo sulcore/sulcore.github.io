@@ -33,12 +33,14 @@ browser; nothing is sent anywhere until the visitor taps the button.
 
 ```bash
 nvm use            # Node 22 (see .nvmrc)
+npm i -g npm@11    # the lockfile is npm 11 (see ADR-0005)
 npm ci
 npm run dev        # http://localhost:3000/pt/
 ```
 
 ```bash
-npm run check      # typecheck + static build + output verification
+npm run check      # typecheck + unit tests + static build + output verification
+npm run test:e2e   # Playwright on desktop and mobile, against out/
 npm run preview    # serve the exported site from out/
 ```
 
@@ -52,6 +54,9 @@ src/
     dictionary.ts          all copy, PT and EN, one typed object per language
     cases.ts               case studies
     site.ts                contact, public URL, base path helper
+  lib/                     pure logic (demo state machine, WhatsApp message, paths)
+tests/unit/                Vitest: logic and content contract
+tests/e2e/                 Playwright: real browser, desktop and mobile
 scripts/verify-build.mjs   checks the exported site before every deploy
 docs/                      architecture, content guide, deploy, decision records
 ```
@@ -59,8 +64,8 @@ docs/                      architecture, content guide, deploy, decision records
 ## How changes ship
 
 1. Branch, change, open a pull request.
-2. **CI** runs typecheck, build and `verify-build` (required pages, broken internal links,
-   `hreflang` on every page).
+2. **CI** runs typecheck, unit tests, build and `verify-build`, then end-to-end tests in
+   Chromium on desktop and mobile against the exported site.
 3. Merge to `main` → **Deploy** builds again with the Pages base path, verifies, publishes.
 
 Every non-obvious technical choice is recorded in [`docs/adr/`](docs/adr/).

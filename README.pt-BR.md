@@ -27,20 +27,22 @@ WhatsApp no navegador; nada é enviado até o visitante tocar no botão.
 
 ```bash
 nvm use            # Node 22 (ver .nvmrc)
+npm i -g npm@11    # o lockfile é do npm 11 (ver ADR-0005)
 npm ci
 npm run dev        # http://localhost:3000/pt/
 ```
 
 ```bash
-npm run check      # typecheck + build estático + verificação do resultado
+npm run check      # typecheck + testes unitários + build estático + verificação
+npm run test:e2e   # Playwright em desktop e celular, contra out/
 npm run preview    # serve o site exportado em out/
 ```
 
 ## Como uma mudança chega ao ar
 
 1. Branch, mudança, pull request.
-2. A **CI** roda typecheck, build e `verify-build` (páginas obrigatórias, link interno
-   quebrado, `hreflang` em toda página).
+2. A **CI** roda typecheck, testes unitários, build e `verify-build`, e depois testes de
+   ponta a ponta no Chromium, em desktop e celular, contra o site exportado.
 3. Merge na `main` → o **Deploy** builda de novo com o caminho do Pages, verifica e publica.
 
 Toda escolha técnica que não é óbvia fica registrada em [`docs/adr/`](docs/adr/).

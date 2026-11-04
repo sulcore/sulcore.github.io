@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import type { MouseEvent, ReactNode } from "react";
+import { isSamePage } from "@/lib/paths";
 
 // Link para a home. Se já estamos nela, o <Link> do Next não rola; aqui voltamos ao topo
 // e limpamos a âncora (#contato etc.) da URL.
@@ -11,8 +12,7 @@ export function HomeLink({ href, label, className, children }: { href: string; l
 
   function onClick(e: MouseEvent<HTMLAnchorElement>) {
     if (e.metaKey || e.ctrlKey || e.shiftKey || e.button !== 0) return;
-    const here = pathname.replace(/\/?$/, "/");
-    if (!href.endsWith(here)) return;
+    if (!isSamePage(href, pathname)) return;
     e.preventDefault();
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     window.scrollTo({ top: 0, behavior: reduce ? "auto" : "smooth" });

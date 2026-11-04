@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-11-04 · tests
+
+- Unit tests (Vitest) for the demo state machine, the WhatsApp message and the content contract.
+- End-to-end tests (Playwright) on desktop and mobile against the exported site; new CI job.
+- Logic extracted to `src/lib/`; lockfile on npm 11. ADR-0005.
+
 ## 2026-11-04
 
 - Dark theme (brand navy) is now the default, with a light/dark toggle in the header; the choice is remembered.

@@ -13,7 +13,7 @@ concurrency:
 
 jobs:
   check:
-    name: Typecheck, build e verificação
+    name: Typecheck, testes, build e verificação
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
@@ -22,7 +22,40 @@ jobs:
         with:
           node-version-file: .nvmrc
           cache: npm
+      - run: npm install -g npm@11.6.2
       - run: npm ci
       - run: npm run typecheck
+      - run: npm test
       - run: npm run build
       - run: npm run verify
+      - uses: actions/upload-artifact@v4
+        with:
+          name: site
+          path: out
+          retention-days: 3
+
+  e2e:
+    name: Testes de ponta a ponta (desktop e celular)
+    needs: check
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm install -g npm@11.6.2
+      - run: npm ci
+      - uses: actions/download-artifact@v4
+        with:
+          name: site
+          path: out
+      - run: npx playwright install --with-deps chromium
+      - run: npm run test:e2e
+      - if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-report
+          path: playwright-report
+          retention-days: 7

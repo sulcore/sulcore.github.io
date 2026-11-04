@@ -2,24 +2,17 @@
 
 import { useEffect, useRef, useState } from "react";
 import type { Dict } from "@/content/dictionary";
+import { finalState, initialState, select, step, view, type ConsoleState } from "@/lib/console-machine";
 
 type Copy = Dict["console"];
 
-// Fases: 0 digitando · 1 pensando · 2 proposta · 3..3+n checagens · confirmando · executado
-const TYPE_MS = 26;
-
 export function Console({ copy }: { copy: Copy }) {
-  const [index, setIndex] = useState(0);
-  const [chars, setChars] = useState(0);
-  const [phase, setPhase] = useState(0);
+  const [state, setState] = useState<ConsoleState>(initialState);
   const [reduced, setReduced] = useState(false);
   const [visible, setVisible] = useState(true);
   const root = useRef<HTMLDivElement>(null);
 
-  const scenario = copy.scenarios[index];
-  const nChecks = scenario.checks.length;
-  const confirmPhase = 3 + nChecks;
-  const donePhase = confirmPhase + 1;
+  const scenario = copy.scenarios[state.index];
 
   useEffect(() => {
     const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
@@ -33,39 +26,19 @@ export function Console({ copy }: { copy: Copy }) {
 
   useEffect(() => {
     if (reduced) {
-      setChars(scenario.prompt.length);
-      setPhase(donePhase);
+      const end = finalState(state.index, scenario);
+      if (end.phase !== state.phase || end.chars !== state.chars) setState(end);
       return;
     }
     if (!visible) return;
-    let t: ReturnType<typeof setTimeout>;
-    if (phase === 0) {
-      if (chars < scenario.prompt.length) t = setTimeout(() => setChars((c) => c + 1), TYPE_MS);
-      else t = setTimeout(() => setPhase(1), 450);
-    } else if (phase === 1) {
-      t = setTimeout(() => setPhase(2), 1000);
-    } else if (phase < confirmPhase) {
-      t = setTimeout(() => setPhase((p) => p + 1), phase === 2 ? 650 : 420);
-    } else if (phase === confirmPhase) {
-      t = setTimeout(() => setPhase(donePhase), 900);
-    } else {
-      t = setTimeout(() => select((index + 1) % copy.scenarios.length), 3600);
-    }
+    const { next, delay } = step(state, scenario, copy.scenarios.length);
+    const t = setTimeout(() => setState(next), delay);
     return () => clearTimeout(t);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [phase, chars, visible, reduced, index]);
+  }, [state, scenario, visible, reduced, copy.scenarios.length]);
 
-  function select(i: number) {
-    setIndex(i);
-    setChars(0);
-    setPhase(0);
-  }
-
-  const typed = scenario.prompt.slice(0, chars);
-  const showProposal = phase >= 2;
-  const checksShown = Math.max(0, Math.min(nChecks, phase - 2));
-  const confirming = phase === confirmPhase;
-  const done = phase >= donePhase;
+  const { typed, typing, thinking, showProposal, checksShown, confirming, done } = view(state, scenario);
+  const index = state.index;
+  const choose = (i: number) => setState(select(i));
 
   return (
     <div ref={root} className="relative">
@@ -86,7 +59,7 @@ export function Console({ copy }: { copy: Copy }) {
               key={s.tab}
               role="tab"
               aria-selected={i === index}
-              onClick={() => select(i)}
+              onClick={() => choose(i)}
               className={`relative rounded-t-md px-3 pb-2.5 pt-1.5 text-[0.8rem] transition-colors ${
                 i === index ? "text-mist" : "text-mist/45 hover:text-mist/80"
               }`}
@@ -103,8 +76,8 @@ export function Console({ copy }: { copy: Copy }) {
             <p className="label !text-[0.62rem] text-blue-soft/70">{copy.input}</p>
             <p className="mt-2 min-h-[3.2rem] font-mono text-[0.84rem] leading-relaxed text-mist sm:min-h-[2.6rem]">
               <span className="text-blue">›</span> {typed}
-              {phase === 0 && <span className="ml-0.5 inline-block h-4 w-[3px] translate-y-0.5 animate-blink rounded-full bg-blue" />}
-              {phase === 1 && (
+              {typing && <span className="ml-0.5 inline-block h-4 w-[3px] translate-y-0.5 animate-blink rounded-full bg-blue" />}
+              {thinking && (
                 <span className="ml-2 inline-flex gap-1 align-middle">
                   <i className="block size-1.5 animate-pulse-dot rounded-full bg-blue-soft" />
                   <i className="block size-1.5 animate-pulse-dot rounded-full bg-blue-soft [animation-delay:.2s]" />
