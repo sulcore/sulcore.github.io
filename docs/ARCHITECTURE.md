@@ -22,6 +22,9 @@ is out of scope until an ADR says otherwise — see [ADR-0003](adr/0003-scripted
 | `/` | `public/index.html` — picks `pt/` or `en/` from the browser language |
 | `/pt/`, `/en/` | `src/app/[locale]/page.tsx` |
 | `/pt/cases/<slug>/` | `src/app/[locale]/cases/[slug]/page.tsx` |
+| `/pt/og.png`, `/en/og.png` | `src/app/[locale]/og.png/route.tsx` — share image rendered at build |
+| `/sitemap.xml`, `/robots.txt` | `src/app/sitemap.ts`, `src/app/robots.ts` |
+| any missing path | `src/app/global-not-found.tsx` → `404.html`, bilingual |
 
 `generateStaticParams` lists every locale and case, so each URL becomes a real file.
 `[locale]/layout.tsx` is the root layout: it sets `<html lang>`, fonts, metadata and
