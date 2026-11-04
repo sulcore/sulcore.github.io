@@ -20,6 +20,9 @@ export function Footer({ dict, locale, altPath }: { dict: Dict; locale: Locale; 
               {SITE.email}
             </a>
           )}
+          <Link href={`/${locale}/build/`} className="font-mono text-xs hover:text-mist">
+            {dict.build.link}
+          </Link>
           <a href={SITE.repo} target="_blank" rel="noopener" className="font-mono text-xs hover:text-mist">
             {dict.footer.source} ↗
           </a>

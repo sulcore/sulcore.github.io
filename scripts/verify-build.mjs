@@ -15,6 +15,8 @@ const REQUIRED = [
   "en/cases/nivela/index.html",
   "pt/cases/eletrica-moro/index.html",
   "en/cases/eletrica-moro/index.html",
+  "pt/build/index.html",
+  "en/build/index.html",
   "robots.txt",
   "sitemap.xml",
   "pt/og.png",

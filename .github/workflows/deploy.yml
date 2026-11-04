@@ -34,6 +34,17 @@ jobs:
       - run: npm run typecheck
       - run: npm run lint
       - run: npm test
+      # 1º build: o site que vai ao ar, para o Lighthouse medir.
+      - run: npm run metrics
+      - run: npm run build
+        env:
+          PAGES_BASE_PATH: ${{ steps.pages.outputs.base_path }}
+      - name: Lighthouse do build que vai ao ar
+        run: |
+          npx @lhci/cli@0.15.1 collect
+          npx @lhci/cli@0.15.1 upload --target=filesystem --outputDir=.lighthouseci/fs
+      # 2º build: o mesmo site, agora com as medições na página "Como este site é feito".
+      - run: npm run metrics
       - run: npm run build
         env:
           PAGES_BASE_PATH: ${{ steps.pages.outputs.base_path }}

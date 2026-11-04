@@ -71,7 +71,9 @@ docs/                      architecture, content guide, deploy, decision records
    Lighthouse with minimum scores.
 3. Merge to `main` → **Deploy** builds again with the Pages base path, verifies, publishes.
 
-Every non-obvious technical choice is recorded in [`docs/adr/`](docs/adr/).
+Every non-obvious technical choice is recorded in [`docs/adr/`](docs/adr/). The live numbers —
+tests, Lighthouse scores, page weight, decisions — are on
+**[sulcore.github.io/en/build](https://sulcore.github.io/en/build/)**, generated on every deploy.
 
 ## Docs
 

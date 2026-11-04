@@ -236,7 +236,15 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
               ))}
             </ol>
             <div className="reveal mt-16 grid gap-6 border-t border-fg/15 pt-10 md:grid-cols-[1fr_2fr]">
-              <p className="text-xl font-semibold tracking-[-0.02em]">{d.process.docsTitle}</p>
+              <div>
+                <p className="text-xl font-semibold tracking-[-0.02em]">{d.process.docsTitle}</p>
+                <Link
+                  href={`/${locale}/build/`}
+                  className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-blue hover:underline"
+                >
+                  {d.build.link} <span aria-hidden>→</span>
+                </Link>
+              </div>
               <ul className="grid gap-px overflow-hidden rounded-xl bg-fg/10 ring-1 ring-fg/10 sm:grid-cols-2 lg:grid-cols-3">
                 {d.process.docs.map((doc, i) => (
                   <li key={doc} className="flex items-center gap-3 bg-paper px-4 py-3.5 text-sm">
