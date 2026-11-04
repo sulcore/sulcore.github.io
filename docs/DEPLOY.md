@@ -18,6 +18,19 @@ The workflow can also be started by hand: **Actions → Deploy → Run workflow*
 2. **Settings → Pages → Build and deployment → Source: GitHub Actions.**
 3. Run the Deploy workflow once (or push to `main`).
 
+## Repository settings (admin)
+
+These live in GitHub settings, not in code, so they are listed here:
+
+1. **Settings → Rules → Rulesets → New branch ruleset**, target `main`:
+   - *Restrict deletions* and *Block force pushes*;
+   - *Require a pull request before merging*;
+   - *Require status checks to pass*: `Typecheck, lint, testes, build e verificação`,
+     `Testes de ponta a ponta (desktop e celular)`, `Lighthouse (performance, acessibilidade, boas
+     práticas, SEO)`, `Revisão de dependências do PR`, `Análise estática (javascript-typescript)`.
+2. **Settings → Code security**: enable *Private vulnerability reporting*, *Dependabot alerts*,
+   *Secret scanning* and *Push protection*.
+
 ## Address
 
 The repository is `sulcore/sulcore.github.io`, so the site is served at the root of the

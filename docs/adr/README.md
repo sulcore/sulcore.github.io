@@ -12,3 +12,4 @@ New decision → copy the format of an existing file, take the next number, open
 | [0005](0005-testing-strategy.md) | Pure logic in unit tests, behavior in real browsers | Accepted |
 | [0006](0006-quality-gates.md) | Lint, format, accessibility and Lighthouse budgets | Accepted |
 | [0007](0007-seo-and-404.md) | SEO, share images and a bilingual 404, generated at build time | Accepted |
+| [0008](0008-supply-chain-security.md) | Supply-chain security: pinned actions, CodeQL, Scorecard, audits | Accepted |

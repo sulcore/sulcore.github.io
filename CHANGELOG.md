@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-11-04 · supply chain
+
+- Actions pinned by commit SHA; least-privilege permissions; checkout without persisted credentials.
+- CodeQL (code and workflows), OpenSSF Scorecard, dependency review and `npm audit` in CI.
+- `scripts/serve.mjs` replaces the `serve` package in tests. ADR-0008.
+
 ## 2026-11-04 · SEO and 404
 
 - Sitemap with `hreflang`, robots.txt, canonical URLs, Open Graph/Twitter tags and Organization JSON-LD.
