@@ -32,7 +32,9 @@ describe("dictionary", () => {
   });
 
   it("references videos that exist in both languages", () => {
-    expect(getDict("pt").nivela.videos.map(([f]) => f)).toEqual(getDict("en").nivela.videos.map(([f]) => f));
+    for (const key of ["nivela", "repara"] as const)
+      expect(getDict("pt")[key].videos.map(([f]) => f)).toEqual(getDict("en")[key].videos.map(([f]) => f));
+    expect(getDict("pt").repara.screens.map(([f]) => f)).toEqual(getDict("en").repara.screens.map(([f]) => f));
   });
 });
 

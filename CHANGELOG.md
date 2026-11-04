@@ -1,5 +1,14 @@
 # Changelog
 
+## 2026-11-04 · Repara
+
+- New own product on the site: **Repara**, for authorized repair centers. Page `/pt/cases/repara/`
+  and `/en/cases/repara/` with challenge, solution, stack and outcome, four videos and three
+  screens recorded with demo data; card on the home page, marked "in development".
+- `ReparaMark` wordmark and the `--color-repara` amber token. `VideoShowcase` takes the address
+  shown in the browser bar.
+- The previous custom-system case and its placeholder page are removed.
+
 ## 2026-11-04 · mobile layout
 
 - Header fits 320px: short contact label on phones ("Contato" / "Contact"), no wrapping, logo

@@ -27,7 +27,10 @@ Every word on the site is in `src/content/`. You don't need to touch components 
 
 ## Videos
 
-Files in `public/video/`, referenced by name in `dictionary.ts` → `nivela.videos`.
+Files in `public/video/`, referenced by name in `dictionary.ts` → `nivela.videos` and
+`repara.videos` (Repara's live in `public/video/repara/`). Repara's still screens are JPGs in
+`public/img/repara/`, listed in `repara.screens`; record them with demo data only — no real
+customer, shop, city or manufacturer name on screen.
 Keep each file small (H.264 MP4, ≤ 3 MB) and add a `.jpg` poster with the same name:
 
 ```bash

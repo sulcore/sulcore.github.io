@@ -3,12 +3,13 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getDict } from "@/content/dictionary";
 import { CASE_SLUGS, getCase } from "@/content/cases";
-import { LOCALES, isLocale } from "@/content/site";
+import { LOCALES, asset, isLocale } from "@/content/site";
 import { absoluteUrl, alternates } from "@/lib/seo";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { VideoShowcase } from "@/components/VideoShowcase";
 import { Architecture } from "@/components/Architecture";
+import { ReparaMark } from "@/components/ReparaMark";
 
 type Params = Promise<{ locale: string; slug: string }>;
 
@@ -54,7 +55,9 @@ export default async function CasePage({ params }: { params: Params }) {
               ← {d.casePage.back}
             </Link>
             <p className="label mt-12 text-blue-soft">{c.kind}</p>
-            <h1 className="mt-4 text-5xl font-semibold tracking-[-0.04em] sm:text-6xl">{c.client}</h1>
+            <h1 className="mt-4 text-5xl font-semibold tracking-[-0.04em] sm:text-6xl">
+              {slug === "repara" ? <ReparaMark /> : c.client}
+            </h1>
             <p className="mt-6 max-w-3xl text-balance text-xl leading-snug text-mist/75 sm:text-2xl">{c.headline}</p>
             {c.link && (
               <a
@@ -72,6 +75,32 @@ export default async function CasePage({ params }: { params: Params }) {
                 <div>
                   <p className="label mb-5 text-blue-soft">{d.nivela.archTitle}</p>
                   <Architecture arch={d.nivela.arch} />
+                </div>
+              </div>
+            )}
+            {slug === "repara" && (
+              <div className="mt-14 space-y-14">
+                <VideoShowcase videos={d.repara.videos} address={d.repara.address} />
+                <div>
+                  <p className="label mb-5 text-blue-soft">{d.repara.screensTitle}</p>
+                  <div className="grid gap-x-5 gap-y-8 md:grid-cols-2">
+                    {d.repara.screens.map(([file, caption], i) => (
+                      <figure key={file} className={i === 0 ? "md:col-span-2" : ""}>
+                        {/* eslint-disable-next-line @next/next/no-img-element -- export estático, sem otimizador de imagem; os JPG já saem no tamanho certo */}
+                        <img
+                          src={asset(`/img/repara/${file}.jpg`)}
+                          alt={caption}
+                          width={i === 0 ? 1440 : 780}
+                          height={i === 0 ? 900 : 1370}
+                          loading="lazy"
+                          decoding="async"
+                          className={`w-full rounded-xl bg-white ring-1 ring-white/10 ${i === 0 ? "" : "aspect-[780/1000] object-cover object-top"}`}
+                        />
+                        <figcaption className="mt-3 text-sm leading-relaxed text-mist/70">{caption}</figcaption>
+                      </figure>
+                    ))}
+                  </div>
+                  <p className="mt-6 text-xs text-mist/60">{d.repara.demoNote}</p>
                 </div>
               </div>
             )}

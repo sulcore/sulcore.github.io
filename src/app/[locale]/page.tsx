@@ -280,7 +280,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
                     <span className={`flex items-center gap-1.5 text-xs ${i === 0 ? "text-[#7fd1ab]" : "text-stone"}`}>
                       <span
                         aria-hidden
-                        className={`size-1.5 rounded-full ${i === 0 ? "bg-[#7fd1ab]" : "bg-stone-2"}`}
+                        className={`size-1.5 rounded-full ${i === 0 ? "bg-[#7fd1ab]" : c.slug === "repara" ? "bg-repara" : "bg-stone-2"}`}
                       />
                       {c.status}
                     </span>

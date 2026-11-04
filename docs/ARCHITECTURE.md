@@ -62,7 +62,7 @@ Locally `PAGES_BASE_PATH` is empty and the site runs at the root. See
 | `VideoShowcase` | client | Real product footage, muted autoplay, poster first. |
 | `ContactComposer` | client | Builds the WhatsApp message in the browser and opens `wa.me`. |
 | `RevealObserver` | client | Adds `.is-in` to `.reveal` elements on scroll. Without JS, content is visible (the hiding rule is scoped to `html.js`). |
-| `Header`, `Footer`, `Logo`, `SectionHead`, `Architecture` | server | Pure markup. |
+| `Header`, `Footer`, `Logo`, `ReparaMark`, `SectionHead`, `Architecture` | server | Pure markup. `ReparaMark` is the Repara wordmark: three dots for the job stages, the last one in amber (`--color-repara`). |
 
 ## Design tokens
 
