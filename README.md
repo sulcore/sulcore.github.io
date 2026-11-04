@@ -3,7 +3,7 @@
   Custom software, properly engineered.
 </p>
 
-[![CI](https://github.com/sulcore/sulcore.github.io/actions/workflows/ci.yml/badge.svg)](https://github.com/sulcore/sulcore.github.io/actions/workflows/ci.yml)
+[![CI](https://github.com/sulcore/sulcore.github.io/actions/workflows/ci.yml/badge.svg?branch=main&event=push)](https://github.com/sulcore/sulcore.github.io/actions/workflows/ci.yml)
 [![Deploy](https://github.com/sulcore/sulcore.github.io/actions/workflows/deploy.yml/badge.svg)](https://github.com/sulcore/sulcore.github.io/actions/workflows/deploy.yml)
 [![CodeQL](https://github.com/sulcore/sulcore.github.io/actions/workflows/codeql.yml/badge.svg)](https://github.com/sulcore/sulcore.github.io/actions/workflows/codeql.yml)
 [![OpenSSF Scorecard](https://api.scorecard.dev/projects/github.com/sulcore/sulcore.github.io/badge)](https://scorecard.dev/viewer/?uri=github.com/sulcore/sulcore.github.io)
