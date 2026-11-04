@@ -46,7 +46,9 @@ npm run preview    # serve o site exportado em out/
    dois temas) e Lighthouse com nota mínima.
 3. Merge na `main` → o **Deploy** builda de novo com o caminho do Pages, verifica e publica.
 
-Toda escolha técnica que não é óbvia fica registrada em [`docs/adr/`](docs/adr/).
+Toda escolha técnica que não é óbvia fica registrada em [`docs/adr/`](docs/adr/). Os números ao
+vivo — testes, notas do Lighthouse, peso da página, decisões — ficam em
+**[sulcore.github.io/pt/build](https://sulcore.github.io/pt/build/)**, gerados a cada deploy.
 
 ## Documentação
 

@@ -23,6 +23,7 @@ is out of scope until an ADR says otherwise — see [ADR-0003](adr/0003-scripted
 | `/pt/`, `/en/` | `src/app/[locale]/page.tsx` |
 | `/pt/cases/<slug>/` | `src/app/[locale]/cases/[slug]/page.tsx` |
 | `/pt/og.png`, `/en/og.png` | `src/app/[locale]/og.png/route.tsx` — share image rendered at build |
+| `/pt/build/`, `/en/build/` | `src/app/[locale]/build/page.tsx` — numbers from `scripts/metrics.mjs` ([ADR-0009](adr/0009-build-page.md)) |
 | `/sitemap.xml`, `/robots.txt` | `src/app/sitemap.ts`, `src/app/robots.ts` |
 | any missing path | `src/app/global-not-found.tsx` → `404.html`, bilingual |
 
