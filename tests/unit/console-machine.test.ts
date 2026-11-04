@@ -1,5 +1,14 @@
 import { describe, expect, it } from "vitest";
-import { cycleDuration, finalState, initialState, phases, select, step, view, type ConsoleState } from "@/lib/console-machine";
+import {
+  cycleDuration,
+  finalState,
+  initialState,
+  phases,
+  select,
+  step,
+  view,
+  type ConsoleState,
+} from "@/lib/console-machine";
 
 const scenario = { prompt: "abc", checks: ["a", "b"] };
 

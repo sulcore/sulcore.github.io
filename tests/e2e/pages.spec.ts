@@ -15,7 +15,10 @@ for (const path of PAGES) {
 }
 
 test("a raiz manda para o idioma do navegador", async ({ browser }) => {
-  for (const [locale, target] of [["pt-BR", "/pt/"], ["en-US", "/en/"]] as const) {
+  for (const [locale, target] of [
+    ["pt-BR", "/pt/"],
+    ["en-US", "/en/"],
+  ] as const) {
     const context = await browser.newContext({ locale });
     const page = await context.newPage();
     await page.goto("/");

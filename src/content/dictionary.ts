@@ -28,8 +28,7 @@ const pt = {
   hero: {
     eyebrow: "Software development · Novo Hamburgo, RS",
     title: ["Software sob medida,", "com engenharia de verdade."],
-    lead:
-      "Construímos sistemas, e-commerce, integrações, soluções de IA e a presença digital da sua empresa. Do jeito que tecnologia deveria ser: clara para quem usa, sólida por dentro e pronta para crescer.",
+    lead: "Construímos sistemas, e-commerce, integrações, soluções de IA e a presença digital da sua empresa. Do jeito que tecnologia deveria ser: clara para quem usa, sólida por dentro e pronta para crescer.",
     primary: "Conte seu projeto",
     secondary: "Ver cases",
     proof: [
@@ -56,11 +55,7 @@ const pt = {
           ["Técnico", "Rafael M."],
           ["Quando", "sex · 14:00 – 16:00"],
         ],
-        checks: [
-          "Permissão do usuário verificada",
-          "Agenda do técnico sem conflito",
-          "Mesma regra da tela manual",
-        ],
+        checks: ["Permissão do usuário verificada", "Agenda do técnico sem conflito", "Mesma regra da tela manual"],
         done: "Gravado uma vez · auditoria #A-2381",
       },
       {
@@ -82,7 +77,7 @@ const pt = {
       },
       {
         tab: "Atendimento",
-        prompt: "WhatsApp: \"disjuntor desarmando toda hora, é urgente\"",
+        prompt: 'WhatsApp: "disjuntor desarmando toda hora, é urgente"',
         kind: "Triagem de chamado",
         fields: [
           ["Categoria", "Problema elétrico"],
@@ -90,11 +85,7 @@ const pt = {
           ["Responsável", "Plantão técnico"],
           ["Responder até", "30 min"],
         ],
-        checks: [
-          "Regra de triagem explicável",
-          "Histórico do cliente anexado",
-          "Rascunho de resposta para revisão",
-        ],
+        checks: ["Regra de triagem explicável", "Histórico do cliente anexado", "Rascunho de resposta para revisão"],
         done: "Chamado #4471 aberto · equipe avisada",
       },
     ] as Scenario[],
@@ -102,13 +93,21 @@ const pt = {
   problem: {
     eyebrow: "Por que a SulCore",
     title: "Do sistema interno à vitrine, a mesma engenharia.",
-    body:
-      "Fazemos sistemas de gestão, e-commerce, soluções de IA, integrações, sites e vídeos comerciais. No Nivela fizemos tudo isso: o produto, o marketing e os vídeos. Seja um projeto do dia a dia ou um caso avançado, o cuidado é o mesmo: arquitetura pensada, decisões registradas e entrega testada.",
+    body: "Fazemos sistemas de gestão, e-commerce, soluções de IA, integrações, sites e vídeos comerciais. No Nivela fizemos tudo isso: o produto, o marketing e os vídeos. Seja um projeto do dia a dia ou um caso avançado, o cuidado é o mesmo: arquitetura pensada, decisões registradas e entrega testada.",
     columns: { left: "O que é comum", right: "Como a SulCore faz" },
     rows: [
-      ["Um fornecedor para cada pedaço, e ninguém junta", "Sistema, loja, site e vídeo com a mesma equipe e o mesmo padrão"],
-      ["Loja e site que não conversam com o estoque nem com o financeiro", "E-commerce e site integrados ao sistema, sem digitar duas vezes"],
-      ["IA que impressiona na demonstração e erra no dia a dia", "IA com confirmação, permissões, avaliação e teto de custo"],
+      [
+        "Um fornecedor para cada pedaço, e ninguém junta",
+        "Sistema, loja, site e vídeo com a mesma equipe e o mesmo padrão",
+      ],
+      [
+        "Loja e site que não conversam com o estoque nem com o financeiro",
+        "E-commerce e site integrados ao sistema, sem digitar duas vezes",
+      ],
+      [
+        "IA que impressiona na demonstração e erra no dia a dia",
+        "IA com confirmação, permissões, avaliação e teto de custo",
+      ],
       ["Regra de negócio espalhada pelas telas", "Regra em um só lugar, reaproveitada por tela, API e IA"],
       ["Teste é o cliente usando", "Baterias de testes e quality gates antes de cada entrega"],
       ["Material comercial genérico, de banco de imagem", "Vídeos e conteúdo feitos a partir do produto real"],
@@ -117,8 +116,7 @@ const pt = {
   services: {
     eyebrow: "O que fazemos",
     title: "Tecnologia sob medida para o processo da sua empresa.",
-    lead:
-      "Cada projeto é analisado do zero: entendemos a operação, desenhamos a solução e acompanhamos de perto até ela rodar no dia a dia.",
+    lead: "Cada projeto é analisado do zero: entendemos a operação, desenhamos a solução e acompanhamos de perto até ela rodar no dia a dia.",
     groups: [
       {
         id: "01",
@@ -170,8 +168,7 @@ const pt = {
   nivela: {
     eyebrow: "Case · Produto próprio",
     title: "Nivela: um ERP SaaS completo, do banco de dados ao balcão.",
-    lead:
-      "Sistema de gestão multiempresa para negócios de serviço: agenda, atendimento, financeiro, fiscal, planos recorrentes, cobrança e IA. Concebido, construído e operado inteiramente pela nossa equipe.",
+    lead: "Sistema de gestão multiempresa para negócios de serviço: agenda, atendimento, financeiro, fiscal, planos recorrentes, cobrança e IA. Concebido, construído e operado inteiramente pela nossa equipe.",
     stats: [
       ["157 mil", "linhas de Python"],
       ["200+", "services de domínio"],
@@ -199,7 +196,16 @@ const pt = {
       domainLabel: "Domínio em services · regra em um só lugar",
       data: "PostgreSQL · isolamento por empresa com RLS",
       side: ["Fila assíncrona", "Monitoramento de erros"],
-      integrations: ["SEFAZ", "NFS-e Nacional", "Pix", "Stripe", "Asaas", "Open Finance", "Google Calendar", "WhatsApp"],
+      integrations: [
+        "SEFAZ",
+        "NFS-e Nacional",
+        "Pix",
+        "Stripe",
+        "Asaas",
+        "Open Finance",
+        "Google Calendar",
+        "WhatsApp",
+      ],
       integrationsLabel: "Integrações diretas",
     },
     link: "Ver case completo",
@@ -208,12 +214,14 @@ const pt = {
   ai: {
     eyebrow: "IA aplicada",
     title: "A IA propõe. A pessoa confirma. O sistema executa.",
-    lead:
-      "É o padrão que usamos para colocar IA em operação real. O modelo nunca grava nada sozinho: ele monta uma proposta, o sistema valida com as mesmas regras da tela manual e só executa quando alguém confirma.",
+    lead: "É o padrão que usamos para colocar IA em operação real. O modelo nunca grava nada sozinho: ele monta uma proposta, o sistema valida com as mesmas regras da tela manual e só executa quando alguém confirma.",
     steps: [
       ["Pedido", "A pessoa escreve o que precisa, em linguagem natural."],
       ["Proposta", "A IA consulta o sistema só com leitura e monta a ação."],
-      ["Validação", "O servidor aplica permissão, regra de negócio e conflitos. O resumo vem do banco, não do texto da IA."],
+      [
+        "Validação",
+        "O servidor aplica permissão, regra de negócio e conflitos. O resumo vem do banco, não do texto da IA.",
+      ],
       ["Confirmação", "A pessoa vê exatamente o que será gravado e confirma."],
       ["Execução", "Uma vez só, com a linha travada e registro de auditoria."],
     ] as [string, string][],
@@ -230,13 +238,15 @@ const pt = {
   process: {
     eyebrow: "Como trabalhamos",
     title: "Uma esteira de engenharia que não deixa a velocidade virar bagunça.",
-    lead:
-      "Usamos as ferramentas mais modernas de desenvolvimento, dentro de um processo com regras escritas, verificação automática e revisão em cada etapa.",
+    lead: "Usamos as ferramentas mais modernas de desenvolvimento, dentro de um processo com regras escritas, verificação automática e revisão em cada etapa.",
     stages: [
       ["Decisão", "Arquitetura registrada antes do código, com o porquê de cada escolha."],
       ["Código", "Padrões obrigatórios: camada HTTP fina, regra em services, migrations versionadas."],
       ["Testes", "Unitários, integração, segurança e smoke em banco real."],
-      ["Quality gate", "Cada pull request analisado: segredo vazado, arquivo proibido e migration sem aviso bloqueiam."],
+      [
+        "Quality gate",
+        "Cada pull request analisado: segredo vazado, arquivo proibido e migration sem aviso bloqueiam.",
+      ],
       ["Homologação", "Ambiente separado, com dados de exemplo, antes de qualquer cliente ver."],
       ["Validação visual", "Navegador real, desktop e celular. Elemento presente não basta, precisa estar certo."],
       ["Produção", "Promoção só por revisão, com relatório de entrega e limitações declaradas."],
@@ -296,10 +306,15 @@ const pt = {
   contact: {
     eyebrow: "Contato",
     title: "Conte o problema. A gente responde com um caminho.",
-    lead:
-      "Sem formulário longo. Escolha o tipo de projeto, descreva em poucas linhas e a mensagem chega pronta no nosso WhatsApp.",
+    lead: "Sem formulário longo. Escolha o tipo de projeto, descreva em poucas linhas e a mensagem chega pronta no nosso WhatsApp.",
     typeLabel: "Tipo de projeto",
-    types: ["Sistema sob medida", "IA nos processos", "Integração / WhatsApp", "Site ou vídeo comercial", "Ainda não sei"],
+    types: [
+      "Sistema sob medida",
+      "IA nos processos",
+      "Integração / WhatsApp",
+      "Site ou vídeo comercial",
+      "Ainda não sei",
+    ],
     nameLabel: "Seu nome e empresa",
     namePlaceholder: "Ana · Construtora Vale",
     msgLabel: "O que você precisa resolver?",
@@ -348,8 +363,7 @@ const en: Dict = {
   hero: {
     eyebrow: "Software development · Southern Brazil",
     title: ["Custom software,", "properly engineered."],
-    lead:
-      "We build systems, e-commerce, integrations, AI solutions and your company's digital presence. The way technology should be: clear for the people using it, solid on the inside, ready to grow.",
+    lead: "We build systems, e-commerce, integrations, AI solutions and your company's digital presence. The way technology should be: clear for the people using it, solid on the inside, ready to grow.",
     primary: "Tell us about your project",
     secondary: "See our cases",
     proof: [
@@ -376,11 +390,7 @@ const en: Dict = {
           ["Technician", "Rafael M."],
           ["When", "Fri · 2:00 – 4:00 pm"],
         ],
-        checks: [
-          "User permission verified",
-          "No conflict on technician's schedule",
-          "Same rule as the manual screen",
-        ],
+        checks: ["User permission verified", "No conflict on technician's schedule", "Same rule as the manual screen"],
         done: "Saved exactly once · audit #A-2381",
       },
       {
@@ -402,7 +412,7 @@ const en: Dict = {
       },
       {
         tab: "Support",
-        prompt: "WhatsApp: \"breaker keeps tripping, it's urgent\"",
+        prompt: 'WhatsApp: "breaker keeps tripping, it\'s urgent"',
         kind: "Ticket triage",
         fields: [
           ["Category", "Electrical issue"],
@@ -410,11 +420,7 @@ const en: Dict = {
           ["Assignee", "On-call technician"],
           ["Reply within", "30 min"],
         ],
-        checks: [
-          "Explainable triage rule",
-          "Customer history attached",
-          "Draft reply ready for review",
-        ],
+        checks: ["Explainable triage rule", "Customer history attached", "Draft reply ready for review"],
         done: "Ticket #4471 opened · team notified",
       },
     ],
@@ -422,13 +428,21 @@ const en: Dict = {
   problem: {
     eyebrow: "Why SulCore",
     title: "From internal systems to the storefront, the same engineering.",
-    body:
-      "We build management systems, e-commerce, AI solutions, integrations, websites and commercial videos. We did all of that for Nivela: the product, the marketing and the videos. Whether it's an everyday project or an advanced one, the care is the same: thoughtful architecture, recorded decisions and tested delivery.",
+    body: "We build management systems, e-commerce, AI solutions, integrations, websites and commercial videos. We did all of that for Nivela: the product, the marketing and the videos. Whether it's an everyday project or an advanced one, the care is the same: thoughtful architecture, recorded decisions and tested delivery.",
     columns: { left: "What's common", right: "How SulCore does it" },
     rows: [
-      ["A different vendor for each piece, and nobody ties them together", "System, store, website and video by one team, to one standard"],
-      ["A store and website that don't talk to inventory or finance", "E-commerce and website connected to the system, no double entry"],
-      ["AI that shines in the demo and fails day to day", "AI with confirmation, permissions, evaluation and a cost ceiling"],
+      [
+        "A different vendor for each piece, and nobody ties them together",
+        "System, store, website and video by one team, to one standard",
+      ],
+      [
+        "A store and website that don't talk to inventory or finance",
+        "E-commerce and website connected to the system, no double entry",
+      ],
+      [
+        "AI that shines in the demo and fails day to day",
+        "AI with confirmation, permissions, evaluation and a cost ceiling",
+      ],
       ["Business rules scattered across screens", "Rules in one place, reused by UI, API and AI"],
       ["Testing means the customer using it", "Test suites and quality gates before every delivery"],
       ["Generic marketing material from stock libraries", "Videos and content made from the real product"],
@@ -437,8 +451,7 @@ const en: Dict = {
   services: {
     eyebrow: "What we do",
     title: "Technology shaped around your company's process.",
-    lead:
-      "Every project starts from scratch: we learn the operation, design the solution and stay close until it runs day to day.",
+    lead: "Every project starts from scratch: we learn the operation, design the solution and stay close until it runs day to day.",
     groups: [
       {
         id: "01",
@@ -490,8 +503,7 @@ const en: Dict = {
   nivela: {
     eyebrow: "Case · Our own product",
     title: "Nivela: a complete SaaS ERP, from the database to the front desk.",
-    lead:
-      "Multi-company management software for service businesses: scheduling, operations, finance, tax, recurring plans, billing and AI. Designed, built and operated entirely by our team.",
+    lead: "Multi-company management software for service businesses: scheduling, operations, finance, tax, recurring plans, billing and AI. Designed, built and operated entirely by our team.",
     stats: [
       ["157k", "lines of Python"],
       ["200+", "domain services"],
@@ -506,7 +518,10 @@ const en: Dict = {
       ["api", "Public API"],
     ],
     highlights: [
-      ["Direct e-invoicing, no middleman", "Brazilian NFS-e and NF-e/NFC-e transmitted directly, with an encrypted certificate."],
+      [
+        "Direct e-invoicing, no middleman",
+        "Brazilian NFS-e and NF-e/NFC-e transmitted directly, with an encrypted certificate.",
+      ],
       ["Finance that reconciles", "Invoices, installments, settlements, bank reconciliation and period results."],
       ["Billing and payments", "Stripe, Asaas and Pix, with idempotent webhooks and subscriptions."],
       ["AI with confirmation", "Natural-language actions with quotas, cost ceilings and audit trails."],
@@ -528,12 +543,14 @@ const en: Dict = {
   ai: {
     eyebrow: "Applied AI",
     title: "AI proposes. A person confirms. The system executes.",
-    lead:
-      "This is the pattern we use to put AI into real operations. The model never writes anything on its own: it builds a proposal, the system validates it with the same rules as the manual screen, and it only runs once someone confirms.",
+    lead: "This is the pattern we use to put AI into real operations. The model never writes anything on its own: it builds a proposal, the system validates it with the same rules as the manual screen, and it only runs once someone confirms.",
     steps: [
       ["Request", "The person writes what they need, in plain language."],
       ["Proposal", "The AI queries the system read-only and assembles the action."],
-      ["Validation", "The server applies permissions, business rules and conflicts. The summary comes from the database, not from the AI's text."],
+      [
+        "Validation",
+        "The server applies permissions, business rules and conflicts. The summary comes from the database, not from the AI's text.",
+      ],
       ["Confirmation", "The person sees exactly what will be saved and confirms."],
       ["Execution", "Exactly once, with a row lock and an audit record."],
     ],
@@ -550,13 +567,15 @@ const en: Dict = {
   process: {
     eyebrow: "How we work",
     title: "An engineering pipeline that keeps speed from turning into chaos.",
-    lead:
-      "We use the most modern development tools, inside a process with written rules, automated checks and review at every stage.",
+    lead: "We use the most modern development tools, inside a process with written rules, automated checks and review at every stage.",
     stages: [
       ["Decision", "Architecture recorded before code, with the reasoning behind each choice."],
       ["Code", "Mandatory patterns: thin HTTP layer, rules in services, versioned migrations."],
       ["Tests", "Unit, integration, security and smoke tests on a real database."],
-      ["Quality gate", "Every pull request analyzed: leaked secrets, forbidden files and unannounced migrations are blocked."],
+      [
+        "Quality gate",
+        "Every pull request analyzed: leaked secrets, forbidden files and unannounced migrations are blocked.",
+      ],
       ["Staging", "A separate environment with sample data, before any customer sees it."],
       ["Visual check", "Real browser, desktop and mobile. Present isn't enough — it has to be right."],
       ["Production", "Promoted only through review, with a delivery report and stated limitations."],
@@ -616,10 +635,15 @@ const en: Dict = {
   contact: {
     eyebrow: "Contact",
     title: "Tell us the problem. We'll reply with a path.",
-    lead:
-      "No long forms. Pick the kind of project, describe it in a few lines, and the message arrives ready on our WhatsApp.",
+    lead: "No long forms. Pick the kind of project, describe it in a few lines, and the message arrives ready on our WhatsApp.",
     typeLabel: "Project type",
-    types: ["Custom system", "AI in processes", "Integration / WhatsApp", "Website or commercial video", "Not sure yet"],
+    types: [
+      "Custom system",
+      "AI in processes",
+      "Integration / WhatsApp",
+      "Website or commercial video",
+      "Not sure yet",
+    ],
     nameLabel: "Your name and company",
     namePlaceholder: "Anna · Vale Construction",
     msgLabel: "What do you need to solve?",

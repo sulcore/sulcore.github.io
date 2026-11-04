@@ -15,7 +15,8 @@ function shape(value: unknown): unknown {
 function strings(value: unknown, path = ""): [string, string][] {
   if (typeof value === "string") return [[path, value]];
   if (Array.isArray(value)) return value.flatMap((v, i) => strings(v, `${path}[${i}]`));
-  if (value && typeof value === "object") return Object.entries(value).flatMap(([k, v]) => strings(v, path ? `${path}.${k}` : k));
+  if (value && typeof value === "object")
+    return Object.entries(value).flatMap(([k, v]) => strings(v, path ? `${path}.${k}` : k));
   return [];
 }
 
@@ -36,16 +37,24 @@ describe("dictionary", () => {
 });
 
 describe("cases", () => {
-  it.each(LOCALES.flatMap((l) => CASE_SLUGS.map((s) => [l, s] as const)))("%s/%s is complete when ready", (locale, slug) => {
-    const c = getCase(locale, slug);
-    expect(c).toBeDefined();
-    if (!c?.ready) return;
-    for (const field of ["challenge", "solution", "stack", "result"] as const) expect(c[field].length).toBeGreaterThan(0);
-  });
+  it.each(LOCALES.flatMap((l) => CASE_SLUGS.map((s) => [l, s] as const)))(
+    "%s/%s is complete when ready",
+    (locale, slug) => {
+      const c = getCase(locale, slug);
+      expect(c).toBeDefined();
+      if (!c?.ready) return;
+      for (const field of ["challenge", "solution", "stack", "result"] as const)
+        expect(c[field].length).toBeGreaterThan(0);
+    },
+  );
 
   it("lists every case on the home page", () => {
     for (const locale of LOCALES) {
-      expect(getDict(locale).cases.items.map((i) => i.slug).sort()).toEqual([...CASE_SLUGS].sort());
+      expect(
+        getDict(locale)
+          .cases.items.map((i) => i.slug)
+          .sort(),
+      ).toEqual([...CASE_SLUGS].sort());
     }
   });
 });

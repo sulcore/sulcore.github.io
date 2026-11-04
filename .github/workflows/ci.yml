@@ -13,7 +13,7 @@ concurrency:
 
 jobs:
   check:
-    name: Typecheck, testes, build e verificação
+    name: Typecheck, lint, testes, build e verificação
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
@@ -25,6 +25,8 @@ jobs:
       - run: npm install -g npm@11.6.2
       - run: npm ci
       - run: npm run typecheck
+      - run: npm run lint
+      - run: npm run format:check
       - run: npm test
       - run: npm run build
       - run: npm run verify
@@ -59,3 +61,16 @@ jobs:
           name: playwright-report
           path: playwright-report
           retention-days: 7
+
+  lighthouse:
+    name: Lighthouse (performance, acessibilidade, boas práticas, SEO)
+    needs: check
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/download-artifact@v4
+        with:
+          name: site
+          path: out
+      - run: npx @lhci/cli@0.15.1 autorun

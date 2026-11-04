@@ -23,7 +23,11 @@ export function phases(scenario: ScenarioShape) {
 }
 
 // Próximo estado e quanto esperar até ele. Depois de "executado", passa para o próximo cenário.
-export function step(state: ConsoleState, scenario: ScenarioShape, total: number): { next: ConsoleState; delay: number } {
+export function step(
+  state: ConsoleState,
+  scenario: ScenarioShape,
+  total: number,
+): { next: ConsoleState; delay: number } {
   const { confirm, done } = phases(scenario);
   const { phase, chars, index } = state;
   if (phase === 0) {
@@ -32,7 +36,8 @@ export function step(state: ConsoleState, scenario: ScenarioShape, total: number
       : { next: { ...state, phase: 1 }, delay: TIMING.afterTypingMs };
   }
   if (phase === 1) return { next: { ...state, phase: 2 }, delay: TIMING.thinkingMs };
-  if (phase < confirm) return { next: { ...state, phase: phase + 1 }, delay: phase === 2 ? TIMING.proposalMs : TIMING.checkMs };
+  if (phase < confirm)
+    return { next: { ...state, phase: phase + 1 }, delay: phase === 2 ? TIMING.proposalMs : TIMING.checkMs };
   if (phase === confirm) return { next: { ...state, phase: done }, delay: TIMING.confirmMs };
   return { next: select((index + 1) % total), delay: TIMING.holdMs };
 }

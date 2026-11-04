@@ -7,7 +7,17 @@ import { isSamePage } from "@/lib/paths";
 
 // Link para a home. Se já estamos nela, o <Link> do Next não rola; aqui voltamos ao topo
 // e limpamos a âncora (#contato etc.) da URL.
-export function HomeLink({ href, label, className, children }: { href: string; label: string; className?: string; children: ReactNode }) {
+export function HomeLink({
+  href,
+  label,
+  className,
+  children,
+}: {
+  href: string;
+  label?: string;
+  className?: string;
+  children: ReactNode;
+}) {
   const pathname = usePathname();
 
   function onClick(e: MouseEvent<HTMLAnchorElement>) {

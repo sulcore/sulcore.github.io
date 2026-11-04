@@ -22,7 +22,10 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
       <main>
         {/* HERO */}
         <section className="relative overflow-hidden">
-          <div aria-hidden className="grid-paper absolute inset-0 [mask-image:radial-gradient(ellipse_at_70%_40%,black,transparent_70%)]" />
+          <div
+            aria-hidden
+            className="grid-paper absolute inset-0 [mask-image:radial-gradient(ellipse_at_70%_40%,black,transparent_70%)]"
+          />
           <div className="relative mx-auto grid max-w-6xl gap-12 px-4 pb-20 pt-14 sm:px-6 lg:grid-cols-[1.1fr_1fr] lg:items-center lg:gap-12 lg:pb-28 lg:pt-20">
             <div>
               <p className="label flex items-center gap-3 text-stone-2">
@@ -71,7 +74,9 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
             <div className="reveal self-end overflow-hidden rounded-2xl bg-paper ring-1 ring-fg/10">
               <div className="grid grid-cols-2 border-b border-fg/10">
                 <p className="label px-4 py-3 !text-[0.6rem] text-stone-2 sm:px-5">{d.problem.columns.left}</p>
-                <p className="label border-l border-fg/10 px-4 py-3 !text-[0.6rem] text-blue sm:px-5">{d.problem.columns.right}</p>
+                <p className="label border-l border-fg/10 px-4 py-3 !text-[0.6rem] text-blue sm:px-5">
+                  {d.problem.columns.right}
+                </p>
               </div>
               {d.problem.rows.map(([bad, good]) => (
                 <div key={bad} className="grid grid-cols-2 border-b border-fg/10 last:border-b-0">
@@ -96,10 +101,10 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
                   key={g.id}
                   className="reveal group grid gap-5 border-b border-fg/15 py-9 md:grid-cols-[5rem_1fr_1.3fr] md:gap-8"
                 >
-                  <span className="font-mono text-sm text-fg/35 transition-colors group-hover:text-blue">{g.id}</span>
+                  <span className="font-mono text-sm text-stone-2 transition-colors group-hover:text-blue">{g.id}</span>
                   <div>
                     <h3 className="text-2xl font-semibold tracking-[-0.02em]">{g.name}</h3>
-                    <p className="mt-2 text-fg/60">{g.summary}</p>
+                    <p className="mt-2 text-fg/75">{g.summary}</p>
                   </div>
                   <ul className="space-y-2.5">
                     {g.items.map((it) => (
@@ -117,14 +122,23 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
 
         {/* CASE NIVELA */}
         <section id="nivela" className="relative scroll-mt-16 bg-ink text-mist">
-          <div aria-hidden className="grid-ink absolute inset-0 [mask-image:linear-gradient(to_bottom,black,transparent_60%)]" />
+          <div
+            aria-hidden
+            className="grid-ink absolute inset-0 [mask-image:linear-gradient(to_bottom,black,transparent_60%)]"
+          />
           <div className="relative mx-auto max-w-6xl px-4 py-20 sm:px-6 lg:py-28">
-            <SectionHead eyebrow={d.nivela.eyebrow} title={d.nivela.title} lead={d.nivela.lead} tone="dark" index="02" />
+            <SectionHead
+              eyebrow={d.nivela.eyebrow}
+              title={d.nivela.title}
+              lead={d.nivela.lead}
+              tone="dark"
+              index="02"
+            />
             <dl className="reveal mt-12 grid grid-cols-2 gap-px overflow-hidden rounded-xl bg-white/10 ring-1 ring-white/10 sm:grid-cols-3 lg:grid-cols-5">
               {d.nivela.stats.map(([n, l]) => (
                 <div key={l} className="bg-ink px-4 py-5 sm:px-5">
                   <dt className="font-mono text-2xl font-medium tracking-tight text-mist sm:text-3xl">{n}</dt>
-                  <dd className="mt-1.5 text-xs leading-snug text-mist/55">{l}</dd>
+                  <dd className="mt-1.5 text-xs leading-snug text-mist/70">{l}</dd>
                 </div>
               ))}
             </dl>
@@ -173,8 +187,10 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
                 <li key={t} className="reveal relative bg-paper p-5 lg:p-6" style={{ transitionDelay: `${i * 70}ms` }}>
                   <span className="font-mono text-xs text-blue">{String(i + 1).padStart(2, "0")}</span>
                   <h3 className="mt-3 text-lg font-semibold tracking-[-0.01em]">{t}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-fg/65">{body}</p>
-                  {i === 3 && <span className="label absolute right-4 top-5 !text-[0.55rem] text-blue">{d.ai.human}</span>}
+                  <p className="mt-2 text-sm leading-relaxed text-fg/75">{body}</p>
+                  {i === 3 && (
+                    <span className="label absolute right-4 top-5 !text-[0.55rem] text-blue">{d.ai.human}</span>
+                  )}
                 </li>
               ))}
             </ol>
@@ -197,18 +213,25 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
           <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6 lg:py-28">
             <SectionHead eyebrow={d.process.eyebrow} title={d.process.title} lead={d.process.lead} index="04" />
             <ol className="relative mt-14 grid gap-0 lg:grid-cols-7">
-              <span aria-hidden className="absolute left-[7px] top-2 bottom-2 w-px bg-fg/15 lg:left-2 lg:right-2 lg:top-[7px] lg:bottom-auto lg:h-px lg:w-auto" />
+              <span
+                aria-hidden
+                className="absolute left-[7px] top-2 bottom-2 w-px bg-fg/15 lg:left-2 lg:right-2 lg:top-[7px] lg:bottom-auto lg:h-px lg:w-auto"
+              />
               {d.process.stages.map(([t, body], i) => (
-                <li key={t} className="reveal relative pb-8 pl-9 lg:pb-0 lg:pl-0 lg:pr-4" style={{ transitionDelay: `${i * 60}ms` }}>
+                <li
+                  key={t}
+                  className="reveal relative pb-8 pl-9 lg:pb-0 lg:pl-0 lg:pr-4"
+                  style={{ transitionDelay: `${i * 60}ms` }}
+                >
                   <span
                     aria-hidden
                     className={`absolute left-0 top-0.5 size-[15px] rounded-full ring-4 ring-paper-2 lg:static lg:block ${
                       i === d.process.stages.length - 1 ? "bg-ok" : "bg-blue"
                     }`}
                   />
-                  <p className="font-mono text-xs text-fg/40 lg:mt-5">{String(i + 1).padStart(2, "0")}</p>
+                  <p className="font-mono text-xs text-stone-2 lg:mt-5">{String(i + 1).padStart(2, "0")}</p>
                   <h3 className="mt-1.5 font-semibold">{t}</h3>
-                  <p className="mt-1.5 text-sm leading-relaxed text-fg/65">{body}</p>
+                  <p className="mt-1.5 text-sm leading-relaxed text-fg/75">{body}</p>
                 </li>
               ))}
             </ol>
@@ -240,23 +263,26 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
                   }`}
                 >
                   <div className="flex items-center justify-between gap-4">
-                    <span className={`label !text-[0.6rem] ${i === 0 ? "text-blue-soft" : "text-stone-2"}`}>{c.kind}</span>
-                    <span
-                      className={`flex items-center gap-1.5 text-xs ${i === 0 ? "text-[#7fd1ab]" : "text-stone"}`}
-                    >
-                      <span aria-hidden className={`size-1.5 rounded-full ${i === 0 ? "bg-[#7fd1ab]" : "bg-stone-2"}`} />
+                    <span className={`label !text-[0.6rem] ${i === 0 ? "text-blue-soft" : "text-stone-2"}`}>
+                      {c.kind}
+                    </span>
+                    <span className={`flex items-center gap-1.5 text-xs ${i === 0 ? "text-[#7fd1ab]" : "text-stone"}`}>
+                      <span
+                        aria-hidden
+                        className={`size-1.5 rounded-full ${i === 0 ? "bg-[#7fd1ab]" : "bg-stone-2"}`}
+                      />
                       {c.status}
                     </span>
                   </div>
                   <h3 className="mt-10 text-3xl font-semibold tracking-[-0.03em]">{c.client}</h3>
-                  <p className={`mt-3 leading-relaxed ${i === 0 ? "text-mist/70" : "text-fg/65"}`}>{c.summary}</p>
+                  <p className={`mt-3 leading-relaxed ${i === 0 ? "text-mist/70" : "text-fg/75"}`}>{c.summary}</p>
                   <div className="mt-8 flex flex-wrap items-end justify-between gap-4">
                     <ul className="flex flex-wrap gap-1.5">
                       {c.tags.map((t) => (
                         <li
                           key={t}
                           className={`rounded px-2 py-1 font-mono text-[0.68rem] ${
-                            i === 0 ? "bg-white/[0.07] text-mist/70" : "bg-paper text-fg/60"
+                            i === 0 ? "bg-white/[0.07] text-mist/70" : "bg-paper text-fg/75"
                           }`}
                         >
                           {t}
@@ -264,7 +290,10 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
                       ))}
                     </ul>
                     <span className={`text-sm font-medium ${i === 0 ? "text-mist" : "text-fg"}`}>
-                      {d.cases.open} <span aria-hidden className="inline-block transition-transform group-hover:translate-x-1">→</span>
+                      {d.cases.open}{" "}
+                      <span aria-hidden className="inline-block transition-transform group-hover:translate-x-1">
+                        →
+                      </span>
                     </span>
                   </div>
                 </Link>
@@ -300,8 +329,14 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
         <section id="contato" className="scroll-mt-16 bg-ink text-mist">
           <div className="mx-auto grid max-w-6xl gap-12 px-4 py-20 sm:px-6 lg:grid-cols-[0.9fr_1.1fr] lg:py-28">
             <div>
-              <SectionHead eyebrow={d.contact.eyebrow} title={d.contact.title} lead={d.contact.lead} tone="dark" index="07" />
-              <p className="reveal mt-8 max-w-md text-sm leading-relaxed text-mist/50">{d.contact.base}</p>
+              <SectionHead
+                eyebrow={d.contact.eyebrow}
+                title={d.contact.title}
+                lead={d.contact.lead}
+                tone="dark"
+                index="07"
+              />
+              <p className="reveal mt-8 max-w-md text-sm leading-relaxed text-mist/65">{d.contact.base}</p>
             </div>
             <div className="reveal rounded-2xl bg-ink-2 p-6 ring-1 ring-white/10 sm:p-8">
               <ContactComposer copy={d.contact} />

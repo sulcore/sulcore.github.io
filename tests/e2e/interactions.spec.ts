@@ -80,7 +80,10 @@ test.describe("contato", () => {
     void failures;
     await page.goto("/pt/#contato");
     const textarea = page.locator("#contato textarea");
-    await page.locator("#contato form").getByRole("button", { name: /Enviar pelo WhatsApp/ }).click();
+    await page
+      .locator("#contato form")
+      .getByRole("button", { name: /Enviar pelo WhatsApp/ })
+      .click();
     expect(await textarea.evaluate((el: HTMLTextAreaElement) => el.validity.valueMissing)).toBe(true);
   });
 });

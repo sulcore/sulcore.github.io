@@ -17,7 +17,10 @@ export function Architecture({ arch }: { arch: Dict["nivela"]["arch"] }) {
           <p className="label mb-3 !text-[0.58rem] text-blue-soft">{arch.domainLabel}</p>
           <div className="grid grid-cols-2 gap-2 sm:grid-cols-3 lg:grid-cols-6">
             {arch.domain.map((d) => (
-              <span key={d} className="rounded-md bg-ink px-3 py-2 text-center font-mono text-[0.75rem] text-mist ring-1 ring-white/10">
+              <span
+                key={d}
+                className="rounded-md bg-ink px-3 py-2 text-center font-mono text-[0.75rem] text-mist ring-1 ring-white/10"
+              >
                 {d}
               </span>
             ))}
@@ -28,7 +31,10 @@ export function Architecture({ arch }: { arch: Dict["nivela"]["arch"] }) {
       </div>
       <div className="flex flex-col gap-2 lg:w-72">
         {arch.side.map((s) => (
-          <span key={s} className="rounded-lg px-3 py-2.5 font-mono text-[0.72rem] text-mist/70 border border-dashed border-white/15">
+          <span
+            key={s}
+            className="rounded-lg px-3 py-2.5 font-mono text-[0.72rem] text-mist/70 border border-dashed border-white/15"
+          >
             {s}
           </span>
         ))}
@@ -53,7 +59,9 @@ function Row({ children }: { children: React.ReactNode }) {
 
 function Chip({ children }: { children: React.ReactNode }) {
   return (
-    <span className="rounded-md px-3 py-2 text-center text-[0.78rem] text-mist/85 ring-1 ring-white/15">{children}</span>
+    <span className="rounded-md px-3 py-2 text-center text-[0.78rem] text-mist/85 ring-1 ring-white/15">
+      {children}
+    </span>
   );
 }
 

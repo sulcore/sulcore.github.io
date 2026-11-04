@@ -39,7 +39,7 @@ npm run dev        # http://localhost:3000/pt/
 ```
 
 ```bash
-npm run check      # typecheck + unit tests + static build + output verification
+npm run check      # typecheck + lint + format + unit tests + static build + output verification
 npm run test:e2e   # Playwright on desktop and mobile, against out/
 npm run preview    # serve the exported site from out/
 ```
@@ -64,8 +64,9 @@ docs/                      architecture, content guide, deploy, decision records
 ## How changes ship
 
 1. Branch, change, open a pull request.
-2. **CI** runs typecheck, unit tests, build and `verify-build`, then end-to-end tests in
-   Chromium on desktop and mobile against the exported site.
+2. **CI** runs typecheck, lint, format check, unit tests, build and `verify-build`; then, in
+   parallel, end-to-end + WCAG 2.1 AA accessibility tests (desktop and mobile, both themes) and
+   Lighthouse with minimum scores.
 3. Merge to `main` → **Deploy** builds again with the Pages base path, verifies, publishes.
 
 Every non-obvious technical choice is recorded in [`docs/adr/`](docs/adr/).
