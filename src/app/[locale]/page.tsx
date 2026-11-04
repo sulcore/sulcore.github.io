@@ -32,7 +32,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
                 <span aria-hidden className="h-4 w-1 rounded-full bg-blue" />
                 {d.hero.eyebrow}
               </p>
-              <h1 className="mt-6 text-balance text-[2.6rem] font-semibold leading-[1.02] tracking-[-0.045em] sm:text-6xl lg:text-[3.6rem]">
+              <h1 className="mt-6 text-balance text-[clamp(2.1rem,10.5vw,2.6rem)] font-semibold leading-[1.02] tracking-[-0.045em] sm:text-6xl lg:text-[3.6rem]">
                 <span className="block text-fg">{d.hero.title[0]}</span>
                 <span className="block text-blue">{d.hero.title[1]}</span>
               </h1>
@@ -40,13 +40,13 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
               <div className="mt-9 flex flex-wrap gap-3">
                 <a
                   href="#contato"
-                  className="inline-flex h-12 items-center gap-2 rounded-lg bg-cta px-5 font-medium text-white transition-colors hover:bg-cta-2"
+                  className="inline-flex h-12 items-center gap-2 whitespace-nowrap rounded-lg bg-cta px-5 font-medium text-white transition-colors hover:bg-cta-2"
                 >
                   {d.hero.primary} <span aria-hidden>→</span>
                 </a>
                 <a
                   href="#cases"
-                  className="inline-flex h-12 items-center rounded-lg px-5 font-medium text-fg ring-1 ring-fg/20 transition hover:bg-fg/5 hover:ring-fg/40"
+                  className="inline-flex h-12 items-center whitespace-nowrap rounded-lg px-5 font-medium text-fg ring-1 ring-fg/20 transition hover:bg-fg/5 hover:ring-fg/40"
                 >
                   {d.hero.secondary}
                 </a>
@@ -72,16 +72,19 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
               <p className="reveal mt-6 max-w-xl text-pretty leading-relaxed text-fg/70">{d.problem.body}</p>
             </div>
             <div className="reveal self-end overflow-hidden rounded-2xl bg-paper ring-1 ring-fg/10">
-              <div className="grid grid-cols-2 border-b border-fg/10">
+              <div className="hidden border-b border-fg/10 sm:grid sm:grid-cols-2">
                 <p className="label px-4 py-3 !text-[0.6rem] text-stone-2 sm:px-5">{d.problem.columns.left}</p>
                 <p className="label border-l border-fg/10 px-4 py-3 !text-[0.6rem] text-blue sm:px-5">
                   {d.problem.columns.right}
                 </p>
               </div>
               {d.problem.rows.map(([bad, good]) => (
-                <div key={bad} className="grid grid-cols-2 border-b border-fg/10 last:border-b-0">
-                  <p className="px-4 py-4 text-sm leading-snug text-stone sm:px-5">{bad}</p>
-                  <p className="flex gap-2 border-l border-fg/10 px-4 py-4 text-sm font-medium leading-snug text-fg sm:px-5">
+                <div key={bad} className="grid border-b border-fg/10 last:border-b-0 sm:grid-cols-2">
+                  <div className="px-4 pt-4 sm:px-5 sm:py-4">
+                    <p className="label mb-1.5 !text-[0.6rem] text-stone-2 sm:hidden">{d.problem.columns.left}</p>
+                    <p className="text-sm leading-snug text-stone">{bad}</p>
+                  </div>
+                  <p className="flex gap-2 px-4 py-4 sm:border-l sm:border-fg/10 text-sm font-medium leading-snug text-fg sm:px-5">
                     <span aria-hidden className="mt-1.5 h-2 w-1 shrink-0 rounded-full bg-blue" />
                     {good}
                   </p>
@@ -136,7 +139,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
             />
             <dl className="reveal mt-12 grid grid-cols-2 gap-px overflow-hidden rounded-xl bg-white/10 ring-1 ring-white/10 sm:grid-cols-3 lg:grid-cols-5">
               {d.nivela.stats.map(([n, l]) => (
-                <div key={l} className="bg-ink px-4 py-5 sm:px-5">
+                <div key={l} className="bg-ink px-4 py-5 last:col-span-2 sm:px-5 sm:last:col-span-1">
                   <dt className="font-mono text-2xl font-medium tracking-tight text-mist sm:text-3xl">{n}</dt>
                   <dd className="mt-1.5 text-xs leading-snug text-mist/70">{l}</dd>
                 </div>
@@ -162,7 +165,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
             <div className="reveal mt-12 flex flex-wrap gap-3">
               <Link
                 href={`/${locale}/cases/nivela/`}
-                className="inline-flex h-11 items-center gap-2 rounded-lg bg-mist px-5 text-sm font-medium text-ink transition-colors hover:bg-white"
+                className="inline-flex h-11 items-center gap-2 whitespace-nowrap rounded-lg bg-mist px-5 text-sm font-medium text-ink transition-colors hover:bg-white"
               >
                 {d.nivela.link} <span aria-hidden>→</span>
               </Link>
@@ -170,7 +173,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
                 href="https://www.nivelaerp.com.br/"
                 target="_blank"
                 rel="noopener"
-                className="inline-flex h-11 items-center rounded-lg px-5 text-sm text-mist/80 ring-1 ring-white/20 transition hover:text-mist hover:ring-white/40"
+                className="inline-flex h-11 items-center whitespace-nowrap rounded-lg px-5 text-sm text-mist/80 ring-1 ring-white/20 transition hover:text-mist hover:ring-white/40"
               >
                 {d.nivela.visit} ↗
               </a>
@@ -240,7 +243,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
                 <p className="text-xl font-semibold tracking-[-0.02em]">{d.process.docsTitle}</p>
                 <Link
                   href={`/${locale}/build/`}
-                  className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-blue hover:underline"
+                  className="mt-4 inline-flex min-h-11 items-center gap-2 text-sm font-medium text-blue hover:underline"
                 >
                   {d.build.link} <span aria-hidden>→</span>
                 </Link>
@@ -270,7 +273,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
                     i === 0 ? "bg-ink text-mist hover:bg-ink-2" : "bg-paper-2 ring-1 ring-fg/10 hover:ring-fg/25"
                   }`}
                 >
-                  <div className="flex items-center justify-between gap-4">
+                  <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-2">
                     <span className={`label !text-[0.6rem] ${i === 0 ? "text-blue-soft" : "text-stone-2"}`}>
                       {c.kind}
                     </span>

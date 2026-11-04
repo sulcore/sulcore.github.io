@@ -17,8 +17,8 @@ export function Header({ dict, locale, altPath }: { dict: Dict; locale: Locale; 
   const other = locale === "pt" ? "en" : "pt";
   return (
     <header className="sticky top-0 z-40 border-b border-fg/10 bg-paper/85 backdrop-blur-md">
-      <div className="mx-auto flex h-16 max-w-6xl items-center gap-6 px-4 sm:px-6">
-        <HomeLink href={base} label={dict.nav.home} className="shrink-0">
+      <div className="mx-auto flex h-16 max-w-6xl items-center gap-3 px-4 sm:gap-6 sm:px-6">
+        <HomeLink href={base} label={dict.nav.home} className="shrink-0 py-2 pr-6">
           <Logo />
         </HomeLink>
         <nav className="ml-auto hidden items-center gap-6 text-sm text-fg/70 lg:flex" aria-label="Principal">
@@ -28,20 +28,21 @@ export function Header({ dict, locale, altPath }: { dict: Dict; locale: Locale; 
             </Link>
           ))}
         </nav>
-        <div className="ml-auto flex items-center gap-2 sm:gap-3 lg:ml-0">
+        <div className="ml-auto flex shrink-0 items-center gap-1.5 sm:gap-3 lg:ml-0">
           <ThemeToggle labels={dict.nav.theme} />
           <Link
             href={altPath}
             hrefLang={other}
-            className="label rounded-md px-2 py-1.5 !text-[0.68rem] text-fg/75 transition-colors hover:text-fg"
+            className="label inline-flex h-9 min-w-9 items-center justify-center rounded-md px-2 py-1.5 !text-[0.68rem] text-fg/75 transition-colors hover:text-fg"
           >
             {other.toUpperCase()}
           </Link>
           <Link
             href={`${base}#contato`}
-            className="inline-flex h-9 items-center rounded-lg bg-cta px-3.5 text-sm font-medium text-white transition-colors hover:bg-cta-2"
+            className="inline-flex h-9 items-center whitespace-nowrap rounded-lg bg-cta px-3 text-sm font-medium text-white transition-colors hover:bg-cta-2 sm:px-3.5"
           >
-            {dict.nav.cta}
+            <span className="sm:hidden">{dict.nav.ctaShort}</span>
+            <span className="hidden sm:inline">{dict.nav.cta}</span>
           </Link>
         </div>
       </div>

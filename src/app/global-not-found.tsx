@@ -26,7 +26,7 @@ export default function GlobalNotFound() {
       </head>
       <body className="grid min-h-dvh place-items-center px-4">
         <main className="w-full max-w-xl py-16">
-          <a href={asset("/pt/")} aria-label="SulCore">
+          <a href={asset("/pt/")} aria-label="SulCore" className="inline-block py-2 pr-6">
             <Logo />
           </a>
           <p className="mt-14 font-mono text-sm text-stone-2">
@@ -43,14 +43,14 @@ export default function GlobalNotFound() {
           <div className="mt-10 flex flex-wrap gap-3">
             <a
               href={asset("/pt/")}
-              className="inline-flex h-11 items-center rounded-lg bg-cta px-5 text-sm font-medium text-white hover:bg-cta-2"
+              className="inline-flex h-11 items-center whitespace-nowrap rounded-lg bg-cta px-5 text-sm font-medium text-white hover:bg-cta-2"
             >
               Ir para o início
             </a>
             <a
               href={asset("/en/")}
               lang="en"
-              className="inline-flex h-11 items-center rounded-lg px-5 text-sm font-medium text-fg ring-1 ring-fg/20 hover:ring-fg/40"
+              className="inline-flex h-11 items-center whitespace-nowrap rounded-lg px-5 text-sm font-medium text-fg ring-1 ring-fg/20 hover:ring-fg/40"
             >
               Go to the home page
             </a>

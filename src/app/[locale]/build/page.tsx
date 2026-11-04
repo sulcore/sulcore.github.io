@@ -64,7 +64,7 @@ export default async function BuildPage({ params }: { params: Params }) {
               <span aria-hidden className="h-4 w-1 rounded-full bg-blue" />
               {b.eyebrow}
             </p>
-            <h1 className="mt-6 text-balance text-[2.6rem] font-semibold leading-[1.04] tracking-[-0.04em] sm:text-6xl">
+            <h1 className="mt-6 text-balance text-[clamp(2.1rem,10.5vw,2.6rem)] font-semibold leading-[1.04] tracking-[-0.04em] sm:text-6xl">
               {b.title}
             </h1>
             <p className="mt-6 max-w-2xl text-pretty text-lg leading-relaxed text-fg/75">{b.lead}</p>
@@ -193,7 +193,7 @@ export default async function BuildPage({ params }: { params: Params }) {
               href={SITE.repo}
               target="_blank"
               rel="noopener"
-              className="mt-6 inline-flex h-11 items-center gap-2 rounded-lg bg-cta px-5 text-sm font-medium text-white hover:bg-cta-2"
+              className="mt-6 inline-flex h-11 items-center gap-2 whitespace-nowrap rounded-lg bg-cta px-5 text-sm font-medium text-white hover:bg-cta-2"
             >
               {b.source} <span aria-hidden>↗</span>
             </a>

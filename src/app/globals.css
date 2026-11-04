@@ -98,6 +98,13 @@ body {
   text-transform: uppercase;
 }
 
+/* No celular o espaçamento largo empurra rótulos para duas linhas. */
+@media (max-width: 639px) {
+  .label {
+    letter-spacing: 0.16em;
+  }
+}
+
 /* Grade de engenharia, sutil, para áreas de fundo. */
 .grid-paper {
   background-image:

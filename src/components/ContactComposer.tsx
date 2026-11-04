@@ -80,7 +80,7 @@ export function ContactComposer({ copy }: { copy: Dict["contact"] }) {
       <div className="flex flex-wrap items-center gap-3">
         <button
           type="submit"
-          className="inline-flex h-12 items-center gap-2 rounded-lg bg-cta px-5 font-medium text-white transition-colors hover:bg-cta-2"
+          className="inline-flex h-12 items-center gap-2 whitespace-nowrap rounded-lg bg-cta px-5 font-medium text-white transition-colors hover:bg-cta-2"
         >
           {hasNumber ? copy.send : copied ? copy.copied : copy.copy}
           <span aria-hidden>→</span>
@@ -89,7 +89,7 @@ export function ContactComposer({ copy }: { copy: Dict["contact"] }) {
           <button
             type="button"
             onClick={copyText}
-            className="text-sm text-mist/60 underline-offset-4 hover:text-mist hover:underline"
+            className="inline-flex min-h-11 items-center px-1 text-sm text-mist/60 underline-offset-4 hover:text-mist hover:underline"
           >
             {copied ? copy.copied : copy.copy}
           </button>
