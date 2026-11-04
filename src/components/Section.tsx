@@ -17,7 +17,7 @@ export function SectionHead({ eyebrow, title, lead, tone = "light", index }: Hea
         {eyebrow}
       </p>
       <h2
-        className={`mt-5 text-balance text-[2rem] font-semibold leading-[1.08] tracking-[-0.03em] sm:text-[2.6rem] ${
+        className={`mt-5 text-balance text-[clamp(1.7rem,8.5vw,2rem)] font-semibold leading-[1.08] tracking-[-0.03em] sm:text-[2.6rem] ${
           dark ? "text-mist" : "text-fg"
         }`}
       >

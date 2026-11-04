@@ -47,7 +47,10 @@ export default async function CasePage({ params }: { params: Params }) {
       <main>
         <section className="bg-ink text-mist">
           <div className="mx-auto max-w-6xl px-4 pb-16 pt-10 sm:px-6 lg:pb-24">
-            <Link href={`/${locale}/#cases`} className="text-sm text-mist/60 hover:text-mist">
+            <Link
+              href={`/${locale}/#cases`}
+              className="-ml-2 inline-flex min-h-11 items-center px-2 text-sm text-mist/60 hover:text-mist"
+            >
               ← {d.casePage.back}
             </Link>
             <p className="label mt-12 text-blue-soft">{c.kind}</p>
@@ -58,7 +61,7 @@ export default async function CasePage({ params }: { params: Params }) {
                 href={c.link.href}
                 target="_blank"
                 rel="noopener"
-                className="mt-8 inline-block font-mono text-sm text-blue-soft hover:text-mist"
+                className="mt-8 inline-flex min-h-11 items-center font-mono text-sm text-blue-soft hover:text-mist"
               >
                 {c.link.label} ↗
               </a>
@@ -121,7 +124,7 @@ export default async function CasePage({ params }: { params: Params }) {
             <p className="text-xl font-semibold tracking-[-0.02em]">{d.casePage.cta}</p>
             <Link
               href={`/${locale}/#contato`}
-              className="inline-flex h-11 items-center gap-2 rounded-lg bg-cta px-5 text-sm font-medium text-white hover:bg-cta-2"
+              className="inline-flex h-11 items-center gap-2 whitespace-nowrap rounded-lg bg-cta px-5 text-sm font-medium text-white hover:bg-cta-2"
             >
               {d.nav.cta} <span aria-hidden>→</span>
             </Link>

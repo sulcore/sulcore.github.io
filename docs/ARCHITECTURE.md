@@ -96,6 +96,7 @@ Fonts: Geist Sans and Geist Mono, self-hosted through the `geist` package.
 | `next build` | CI, deploy | build errors |
 | `scripts/verify-build.mjs` | CI, deploy | missing required page, broken internal link or asset, page without `hreflang`, missing contact section |
 | `playwright test` | CI | JS error or 4xx on any page, horizontal scroll, broken theme, logo, demo, language switch or WhatsApp link — on desktop and mobile |
+| mobile layout (in Playwright) | CI | at 320, 360 and 390px on every page and the 404: horizontal scroll, element past the right edge, text spilling out of a link or button, touch target under 24×24px (WCAG 2.2), fixed-height button with its label on two lines |
 | axe (in Playwright) | CI | any WCAG 2.1 AA violation, every page, both themes |
 | Lighthouse CI | CI | performance < 0.85, accessibility < 1, best practices or SEO < 0.95 |
 
