@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-11-04 · quality gates
+
+- ESLint (Next.js + TypeScript) and Prettier in CI; hooks issues fixed with `useSyncExternalStore`.
+- WCAG 2.1 AA checks with axe on every page and both themes; contrast fixed at token level.
+- Lighthouse CI with minimum scores. ADR-0006.
+
 ## 2026-11-04 · tests
 
 - Unit tests (Vitest) for the demo state machine, the WhatsApp message and the content contract.

@@ -14,4 +14,11 @@ export const test = base.extend<{ failures: string[] }>({
 
 export { expect };
 
-export const PAGES = ["/pt/", "/en/", "/pt/cases/nivela/", "/en/cases/nivela/", "/pt/cases/eletrica-moro/", "/en/cases/eletrica-moro/"];
+export const PAGES = [
+  "/pt/",
+  "/en/",
+  "/pt/cases/nivela/",
+  "/en/cases/nivela/",
+  "/pt/cases/eletrica-moro/",
+  "/en/cases/eletrica-moro/",
+];

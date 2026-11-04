@@ -12,7 +12,7 @@ export function SectionHead({ eyebrow, title, lead, tone = "light", index }: Hea
   return (
     <div className="reveal max-w-3xl">
       <p className={`label flex items-center gap-3 ${dark ? "text-blue-soft" : "text-blue"}`}>
-        {index && <span className={dark ? "text-mist/35" : "text-fg/30"}>{index}</span>}
+        {index && <span className={dark ? "text-mist/60" : "text-stone-2"}>{index}</span>}
         <span aria-hidden className={`h-px w-6 ${dark ? "bg-blue-soft/50" : "bg-blue/50"}`} />
         {eyebrow}
       </p>
@@ -24,7 +24,9 @@ export function SectionHead({ eyebrow, title, lead, tone = "light", index }: Hea
         {title}
       </h2>
       {lead && (
-        <p className={`mt-5 max-w-2xl text-pretty text-[1.05rem] leading-relaxed ${dark ? "text-mist/70" : "text-fg/70"}`}>
+        <p
+          className={`mt-5 max-w-2xl text-pretty text-[1.05rem] leading-relaxed ${dark ? "text-mist/70" : "text-fg/70"}`}
+        >
           {lead}
         </p>
       )}

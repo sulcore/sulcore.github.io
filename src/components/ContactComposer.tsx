@@ -48,7 +48,9 @@ export function ContactComposer({ copy }: { copy: Dict["contact"] }) {
               onClick={() => setType(t)}
               aria-pressed={t === type}
               className={`rounded-full px-3.5 py-2 text-sm transition-colors ${
-                t === type ? "bg-blue text-white" : "text-mist/70 ring-1 ring-white/15 hover:text-mist hover:ring-white/30"
+                t === type
+                  ? "bg-cta text-white"
+                  : "text-mist/70 ring-1 ring-white/15 hover:text-mist hover:ring-white/30"
               }`}
             >
               {t}
@@ -58,7 +60,12 @@ export function ContactComposer({ copy }: { copy: Dict["contact"] }) {
       </fieldset>
       <label className="block">
         <span className="label !text-[0.62rem] text-blue-soft">{copy.nameLabel}</span>
-        <input className={`${field} mt-2`} value={who} onChange={(e) => setWho(e.target.value)} placeholder={copy.namePlaceholder} />
+        <input
+          className={`${field} mt-2`}
+          value={who}
+          onChange={(e) => setWho(e.target.value)}
+          placeholder={copy.namePlaceholder}
+        />
       </label>
       <label className="block">
         <span className="label !text-[0.62rem] text-blue-soft">{copy.msgLabel}</span>
@@ -73,13 +80,17 @@ export function ContactComposer({ copy }: { copy: Dict["contact"] }) {
       <div className="flex flex-wrap items-center gap-3">
         <button
           type="submit"
-          className="inline-flex h-12 items-center gap-2 rounded-lg bg-blue px-5 font-medium text-white transition-colors hover:bg-[#2f7bcf]"
+          className="inline-flex h-12 items-center gap-2 rounded-lg bg-cta px-5 font-medium text-white transition-colors hover:bg-cta-2"
         >
           {hasNumber ? copy.send : copied ? copy.copied : copy.copy}
           <span aria-hidden>→</span>
         </button>
         {hasNumber && (
-          <button type="button" onClick={copyText} className="text-sm text-mist/60 underline-offset-4 hover:text-mist hover:underline">
+          <button
+            type="button"
+            onClick={copyText}
+            className="text-sm text-mist/60 underline-offset-4 hover:text-mist hover:underline"
+          >
             {copied ? copy.copied : copy.copy}
           </button>
         )}

@@ -53,7 +53,12 @@ export default async function CasePage({ params }: { params: Params }) {
             <h1 className="mt-4 text-5xl font-semibold tracking-[-0.04em] sm:text-6xl">{c.client}</h1>
             <p className="mt-6 max-w-3xl text-balance text-xl leading-snug text-mist/75 sm:text-2xl">{c.headline}</p>
             {c.link && (
-              <a href={c.link.href} target="_blank" rel="noopener" className="mt-8 inline-block font-mono text-sm text-blue-soft hover:text-mist">
+              <a
+                href={c.link.href}
+                target="_blank"
+                rel="noopener"
+                className="mt-8 inline-block font-mono text-sm text-blue-soft hover:text-mist"
+              >
                 {c.link.label} ↗
               </a>
             )}

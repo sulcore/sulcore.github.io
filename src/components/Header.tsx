@@ -33,7 +33,7 @@ export function Header({ dict, locale, altPath }: { dict: Dict; locale: Locale; 
           <Link
             href={altPath}
             hrefLang={other}
-            className="label rounded-md px-2 py-1.5 !text-[0.68rem] text-fg/60 transition-colors hover:text-fg"
+            className="label rounded-md px-2 py-1.5 !text-[0.68rem] text-fg/75 transition-colors hover:text-fg"
           >
             {other.toUpperCase()}
           </Link>

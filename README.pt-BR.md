@@ -33,7 +33,7 @@ npm run dev        # http://localhost:3000/pt/
 ```
 
 ```bash
-npm run check      # typecheck + testes unitários + build estático + verificação
+npm run check      # typecheck + lint + formatação + testes unitários + build + verificação
 npm run test:e2e   # Playwright em desktop e celular, contra out/
 npm run preview    # serve o site exportado em out/
 ```
@@ -41,8 +41,9 @@ npm run preview    # serve o site exportado em out/
 ## Como uma mudança chega ao ar
 
 1. Branch, mudança, pull request.
-2. A **CI** roda typecheck, testes unitários, build e `verify-build`, e depois testes de
-   ponta a ponta no Chromium, em desktop e celular, contra o site exportado.
+2. A **CI** roda typecheck, lint, formatação, testes unitários, build e `verify-build`; depois,
+   em paralelo, testes de ponta a ponta + acessibilidade WCAG 2.1 AA (desktop e celular, nos
+   dois temas) e Lighthouse com nota mínima.
 3. Merge na `main` → o **Deploy** builda de novo com o caminho do Pages, verifica e publica.
 
 Toda escolha técnica que não é óbvia fica registrada em [`docs/adr/`](docs/adr/).
