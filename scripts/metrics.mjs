@@ -4,6 +4,7 @@
 // Uso: node scripts/metrics.mjs   (Lighthouse entra se .lighthouseci/fs/manifest.json existir)
 import { execSync } from "node:child_process";
 import { existsSync, readFileSync, readdirSync, statSync, writeFileSync } from "node:fs";
+import { tmpdir } from "node:os";
 import { extname, join } from "node:path";
 
 const run = (cmd) =>
@@ -35,7 +36,10 @@ const commit = attempt(() => {
 });
 
 const unit = attempt(() => {
-  const r = JSON.parse(run("npx vitest run --reporter=json"));
+  // Arquivo explícito: o Vitest 5 grava o JSON em disco em vez de imprimir.
+  const report = join(tmpdir(), `vitest-${process.pid}.json`);
+  run(`npx vitest run --reporter=json --outputFile=${report}`);
+  const r = json(report);
   return { total: r.numTotalTests, passed: r.numPassedTests };
 });
 
