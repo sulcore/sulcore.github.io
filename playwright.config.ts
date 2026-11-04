@@ -15,7 +15,7 @@ export default defineConfig({
     { name: "mobile", use: { ...devices["Pixel 7"] } },
   ],
   webServer: {
-    command: `npx serve out -l ${PORT} --no-clipboard`,
+    command: `node scripts/serve.mjs ${PORT}`,
     url: `http://localhost:${PORT}/pt/`,
     reuseExistingServer: !process.env.CI,
   },

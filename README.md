@@ -5,6 +5,8 @@
 
 [![CI](https://github.com/sulcore/sulcore.github.io/actions/workflows/ci.yml/badge.svg)](https://github.com/sulcore/sulcore.github.io/actions/workflows/ci.yml)
 [![Deploy](https://github.com/sulcore/sulcore.github.io/actions/workflows/deploy.yml/badge.svg)](https://github.com/sulcore/sulcore.github.io/actions/workflows/deploy.yml)
+[![CodeQL](https://github.com/sulcore/sulcore.github.io/actions/workflows/codeql.yml/badge.svg)](https://github.com/sulcore/sulcore.github.io/actions/workflows/codeql.yml)
+[![OpenSSF Scorecard](https://api.scorecard.dev/projects/github.com/sulcore/sulcore.github.io/badge)](https://scorecard.dev/viewer/?uri=github.com/sulcore/sulcore.github.io)
 ![Next.js](https://img.shields.io/badge/Next.js-16-062b52)
 ![TypeScript](https://img.shields.io/badge/TypeScript-strict-3b8be0)
 ![License](https://img.shields.io/badge/code-MIT-8dbbea)
