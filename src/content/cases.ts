@@ -53,7 +53,7 @@ const cases: Record<Locale, Record<string, CaseStudy>> = {
       ],
       result: [
         "Em produção, com ambientes de homologação e produção separados e promoção só por revisão.",
-        "~157 mil linhas de Python, 200+ services de domínio, 170 migrations e 275 arquivos de teste.",
+        "~200 mil linhas de Python, 300 services de domínio, 185 migrations e 330+ arquivos de teste.",
         "14 decisões de arquitetura registradas e documentação viva por módulo.",
       ],
       link: { href: "https://www.nivelaerp.com.br/", label: "nivelaerp.com.br" },
@@ -134,7 +134,7 @@ const cases: Record<Locale, Record<string, CaseStudy>> = {
       ],
       result: [
         "In production, with separate staging and production environments and promotion only through review.",
-        "~157k lines of Python, 200+ domain services, 170 migrations and 275 test files.",
+        "~200k lines of Python, 300 domain services, 185 migrations and 330+ test files.",
         "14 recorded architecture decisions and living documentation per module.",
       ],
       link: { href: "https://www.nivelaerp.com.br/", label: "nivelaerp.com.br" },

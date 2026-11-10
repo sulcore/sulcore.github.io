@@ -1,5 +1,24 @@
 # Changelog
 
+## 2026-11-10 · engineering status page
+
+- New `/pt/status/` and `/en/status/`: Nivela's CI and security signal and test coverage
+  (shields.io endpoint badges fed by a public JSON the Nivela pipeline writes) and a link to the
+  public uptime page. Signal only — never logs, machine names or infrastructure (ADR-0010).
+  Shows "being set up" until `SITE.status` is filled. Linked from the footer and the process section.
+- Nivela's integrations now say "Repara (WhatsApp)": WhatsApp reaches Nivela through Repara's API
+  integration, not directly. Process copy mentions the full suite on every release and the
+  per-module guide with an auto-generated code map.
+
+## 2026-11-10 · public-content guard and Nivela numbers
+
+- Nivela numbers updated from the real repository on 2026-11-10, rounded down: ~200k lines of
+  Python, 300 domain services, 185 migrations, 330+ test files (case page and home stats, PT and EN).
+- `docs/CONTENT.md` gains "Public site: what never goes here" (no IPs, internal hosts, CI machines,
+  credentials, personal e-mails or customer data).
+- New "public content" unit test fails the build if any site text matches those patterns.
+- `AGENTS.md` (+ `CLAUDE.md`) with the rules for AI agents working on this public repository.
+
 ## 2026-11-04 · Repara
 
 - New own product on the site: **Repara**, for authorized repair centers. Page `/pt/cases/repara/`

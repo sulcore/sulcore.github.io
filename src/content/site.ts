@@ -8,6 +8,14 @@ export const SITE = {
   whatsapp: "5551981821970",
   email: "",
   base: "Novo Hamburgo · RS",
+  // Página de status técnico (/status). Só endereços públicos; vazio = "em configuração".
+  status: {
+    // Pasta "raw" do gist público em que o pipeline do Nivela grava o sinal da CI (nivela_app,
+    // FLUXO_GIT.md §15). Ex.: "https://gist.githubusercontent.com/<usuario>/<id>/raw".
+    signal: "",
+    // Página pública de disponibilidade (UptimeRobot ou status.nivelaerp.com.br).
+    uptime: "",
+  },
 };
 
 export const LOCALES = ["pt", "en"] as const;

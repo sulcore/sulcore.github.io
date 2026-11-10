@@ -26,6 +26,12 @@ export function Footer({ dict, locale, altPath }: { dict: Dict; locale: Locale; 
           >
             {dict.build.link}
           </Link>
+          <Link
+            href={`/${locale}/status/`}
+            className="inline-flex min-h-8 items-center font-mono text-xs hover:text-mist"
+          >
+            {dict.status.link}
+          </Link>
           <a
             href={SITE.repo}
             target="_blank"

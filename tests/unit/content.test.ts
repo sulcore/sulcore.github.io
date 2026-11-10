@@ -66,3 +66,43 @@ describe("site config", () => {
     expect(SITE.whatsapp).toMatch(/^\d{10,15}$/);
   });
 });
+
+// Site público: nada de infraestrutura interna, credencial ou dado pessoal em texto (docs/CONTENT.md).
+describe("public content", () => {
+  const PROIBIDO: [string, RegExp][] = [
+    ["endereço IP", /\b(?:\d{1,3}\.){3}\d{1,3}\b/],
+    ["host interno ou de homologação", /\.internal\b|\blocalhost\b|\bstaging\.|\bhomolog\w*\./i],
+    ["máquina ou runner de CI", /\bhel1\b|ubuntu-\d+gb|\bcirunner\b|nivela-ci\b|self-hosted runner/i],
+    ["rota interna de painel", /\/saas\/admin|\/interno\b|\/produto\b/],
+    ["e-mail pessoal", /@(gmail|hotmail|outlook|yahoo)\.com/i],
+    ["formato de token ou chave", /\bnvl\.[\w-]+\.|\bghp_\w+|\bsk-[\w-]{10,}|\bBearer\s+\w{12,}/],
+  ];
+
+  const textos = LOCALES.flatMap((locale) => [
+    ...strings(getDict(locale), `${locale}.dict`),
+    ...CASE_SLUGS.flatMap((slug) => strings(getCase(locale, slug), `${locale}.case.${slug}`)),
+  ]).concat(strings(SITE, "site"));
+
+  it.each(PROIBIDO)("has no %s", (_nome, padrao) => {
+    expect(textos.filter(([, v]) => padrao.test(v))).toEqual([]);
+  });
+});
+
+describe("status page", () => {
+  it("lists the same signals the pipeline publishes, in both languages", async () => {
+    const { SIGNALS } = await import("@/lib/status");
+    for (const locale of LOCALES) expect(getDict(locale).status.signals.map(([k]) => k)).toEqual([...SIGNALS]);
+  });
+
+  it("builds the shields.io endpoint URL only from a public https source", async () => {
+    const { signalBadgeUrl } = await import("@/lib/status");
+    expect(signalBadgeUrl("", "ci", "pt")).toBeNull();
+    expect(signalBadgeUrl("http://exemplo.com/raw", "ci", "pt")).toBeNull();
+    const url = signalBadgeUrl("https://gist.githubusercontent.com/u/abc/raw/", "ci", "en");
+    expect(url).toBe(
+      "https://img.shields.io/endpoint?url=" +
+        encodeURIComponent("https://gist.githubusercontent.com/u/abc/raw/nivela-ci.en.json") +
+        "&style=flat-square",
+    );
+  });
+});

@@ -3,7 +3,7 @@ import { LOCALES, SITE, type Locale } from "@/content/site";
 
 // Caminhos públicos do site (sem o prefixo do Pages), na ordem em que aparecem no sitemap.
 export function sitePaths(): string[] {
-  return ["", ...CASE_SLUGS.map((slug) => `cases/${slug}/`), "build/"];
+  return ["", ...CASE_SLUGS.map((slug) => `cases/${slug}/`), "build/", "status/"];
 }
 
 export function absoluteUrl(locale: Locale, path = ""): string {
