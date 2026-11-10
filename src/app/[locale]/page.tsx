@@ -247,6 +247,12 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
                 >
                   {d.build.link} <span aria-hidden>→</span>
                 </Link>
+                <Link
+                  href={`/${locale}/status/`}
+                  className="mt-1 flex min-h-11 items-center gap-2 text-sm font-medium text-blue hover:underline"
+                >
+                  {d.status.link} <span aria-hidden>→</span>
+                </Link>
               </div>
               <ul className="grid gap-px overflow-hidden rounded-xl bg-fg/10 ring-1 ring-fg/10 sm:grid-cols-2 lg:grid-cols-3">
                 {d.process.docs.map((doc, i) => (

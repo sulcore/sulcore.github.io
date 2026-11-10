@@ -205,7 +205,7 @@ const pt = {
         "Asaas",
         "Open Finance",
         "Google Calendar",
-        "WhatsApp",
+        "Repara (WhatsApp)",
       ],
       integrationsLabel: "Integrações diretas",
     },
@@ -243,7 +243,7 @@ const pt = {
     stages: [
       ["Decisão", "Arquitetura registrada antes do código, com o porquê de cada escolha."],
       ["Código", "Padrões obrigatórios: camada HTTP fina, regra em services, migrations versionadas."],
-      ["Testes", "Unitários, integração, segurança e smoke em banco real."],
+      ["Testes", "Suíte completa a cada versão: unitários, integração, segurança e contratos em banco real."],
       [
         "Quality gate",
         "Cada pull request analisado: segredo vazado, arquivo proibido e migration sem aviso bloqueiam.",
@@ -255,7 +255,7 @@ const pt = {
     docsTitle: "Documentação é parte do produto",
     docs: [
       "Decisões de arquitetura (ADRs)",
-      "Mapa de módulos e armadilhas conhecidas",
+      "Guia por módulo e mapa do código gerado automaticamente",
       "Regras de negócio por domínio",
       "Runbooks de operação e deploy",
       "Dívida técnica rastreada",
@@ -389,6 +389,41 @@ const pt = {
       `${src.toLocaleString("pt-BR")} linhas de aplicação · ${tests.toLocaleString("pt-BR")} linhas de teste`,
     source: "Ver o código no GitHub",
     link: "Como este site é feito",
+  },
+  status: {
+    meta: "Status técnico — SulCore",
+    eyebrow: "Transparência",
+    title: "Status técnico dos nossos produtos.",
+    lead: "Sinais públicos, atualizados sozinhos pelo pipeline: se os testes e a análise de segurança da versão em produção do Nivela estão passando, quanto do código está coberto por testes e se o sistema está no ar.",
+    pending: "em configuração",
+    ciTitle: "Nivela · integração contínua",
+    ciHeading: "A versão em produção passou em tudo?",
+    ciLead:
+      "Cada versão que vai para produção roda a suíte inteira e a análise de segurança. O resultado aparece aqui assim que termina.",
+    signals: [
+      ["ci", "Testes", "Suíte completa a cada versão: unitários, integração e contratos em PostgreSQL de verdade."],
+      ["seguranca", "Segurança", "Vazamento de segredos, análise estática do código e auditoria de dependências."],
+      [
+        "cobertura",
+        "Cobertura de testes",
+        "Linhas e caminhos do código cobertos. Se cair abaixo do piso, a CI barra a versão.",
+      ],
+    ] as [string, string, string][],
+    uptimeTitle: "Disponibilidade",
+    uptimeHeading: "Está no ar?",
+    uptimeLead:
+      "O aplicativo e o site do Nivela são monitorados de fora, a cada poucos minutos, por um serviço independente.",
+    uptimeLink: "Ver a página de disponibilidade",
+    hiddenEyebrow: "Limites",
+    hiddenTitle: "O que não mostramos, de propósito",
+    hiddenLead: "Transparência é mostrar o resultado, não a superfície de ataque. Por isso esta página nunca exibe:",
+    hidden: [
+      "Logs e mensagens de erro",
+      "Nomes de servidores e serviços internos",
+      "Endereços de rede",
+      "Configuração e variáveis de ambiente",
+    ],
+    link: "Status técnico",
   },
   footer: {
     tagline: "Software development",
@@ -600,7 +635,16 @@ const en: Dict = {
       domainLabel: "Domain services · each rule lives in one place",
       data: "PostgreSQL · per-company isolation with RLS",
       side: ["Async job queue", "Error monitoring"],
-      integrations: ["SEFAZ", "NFS-e", "Pix", "Stripe", "Asaas", "Open Finance", "Google Calendar", "WhatsApp"],
+      integrations: [
+        "SEFAZ",
+        "NFS-e",
+        "Pix",
+        "Stripe",
+        "Asaas",
+        "Open Finance",
+        "Google Calendar",
+        "Repara (WhatsApp)",
+      ],
       integrationsLabel: "Direct integrations",
     },
     link: "Read the full case",
@@ -637,7 +681,7 @@ const en: Dict = {
     stages: [
       ["Decision", "Architecture recorded before code, with the reasoning behind each choice."],
       ["Code", "Mandatory patterns: thin HTTP layer, rules in services, versioned migrations."],
-      ["Tests", "Unit, integration, security and smoke tests on a real database."],
+      ["Tests", "Full suite on every release: unit, integration, security and contracts on a real database."],
       [
         "Quality gate",
         "Every pull request analyzed: leaked secrets, forbidden files and unannounced migrations are blocked.",
@@ -649,7 +693,7 @@ const en: Dict = {
     docsTitle: "Documentation is part of the product",
     docs: [
       "Architecture decision records",
-      "Module map and known pitfalls",
+      "Per-module guide and an auto-generated code map",
       "Business rules by domain",
       "Operations and deploy runbooks",
       "Tracked technical debt",
@@ -783,6 +827,41 @@ const en: Dict = {
       `${src.toLocaleString("en")} lines of application code · ${tests.toLocaleString("en")} lines of tests`,
     source: "See the code on GitHub",
     link: "How this site is built",
+  },
+  status: {
+    meta: "Engineering status — SulCore",
+    eyebrow: "Transparency",
+    title: "Engineering status of our products.",
+    lead: "Public signals, updated by the pipeline itself: whether the tests and the security analysis of Nivela's production release are passing, how much of the code is covered by tests and whether the system is up.",
+    pending: "being set up",
+    ciTitle: "Nivela · continuous integration",
+    ciHeading: "Did the production release pass everything?",
+    ciLead:
+      "Every release that goes to production runs the full test suite and the security analysis. The result shows up here as soon as it finishes.",
+    signals: [
+      ["ci", "Tests", "Full suite on every release: unit, integration and contracts on a real PostgreSQL."],
+      ["seguranca", "Security", "Secret-leak detection, static code analysis and dependency audit."],
+      [
+        "cobertura",
+        "Test coverage",
+        "Lines and code paths covered. If it drops below the floor, CI blocks the release.",
+      ],
+    ],
+    uptimeTitle: "Availability",
+    uptimeHeading: "Is it up?",
+    uptimeLead:
+      "Nivela's app and website are monitored from the outside, every few minutes, by an independent service.",
+    uptimeLink: "See the availability page",
+    hiddenEyebrow: "Limits",
+    hiddenTitle: "What we don't show, on purpose",
+    hiddenLead: "Transparency means showing the outcome, not the attack surface. So this page never shows:",
+    hidden: [
+      "Logs and error messages",
+      "Names of internal servers and services",
+      "Network addresses",
+      "Configuration and environment variables",
+    ],
+    link: "Engineering status",
   },
   footer: {
     tagline: "Software development",

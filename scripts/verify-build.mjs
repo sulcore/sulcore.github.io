@@ -17,6 +17,8 @@ const REQUIRED = [
   "en/cases/repara/index.html",
   "pt/build/index.html",
   "en/build/index.html",
+  "pt/status/index.html",
+  "en/status/index.html",
   "robots.txt",
   "sitemap.xml",
   "pt/og.png",

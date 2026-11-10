@@ -23,4 +23,6 @@ export const PAGES = [
   "/en/cases/repara/",
   "/pt/build/",
   "/en/build/",
+  "/pt/status/",
+  "/en/status/",
 ];

@@ -1,5 +1,15 @@
 # Changelog
 
+## 2026-11-10 · engineering status page
+
+- New `/pt/status/` and `/en/status/`: Nivela's CI and security signal and test coverage
+  (shields.io endpoint badges fed by a public JSON the Nivela pipeline writes) and a link to the
+  public uptime page. Signal only — never logs, machine names or infrastructure (ADR-0010).
+  Shows "being set up" until `SITE.status` is filled. Linked from the footer and the process section.
+- Nivela's integrations now say "Repara (WhatsApp)": WhatsApp reaches Nivela through Repara's API
+  integration, not directly. Process copy mentions the full suite on every release and the
+  per-module guide with an auto-generated code map.
+
 ## 2026-11-10 · public-content guard and Nivela numbers
 
 - Nivela numbers updated from the real repository on 2026-11-10, rounded down: ~200k lines of

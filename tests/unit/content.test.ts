@@ -87,3 +87,22 @@ describe("public content", () => {
     expect(textos.filter(([, v]) => padrao.test(v))).toEqual([]);
   });
 });
+
+describe("status page", () => {
+  it("lists the same signals the pipeline publishes, in both languages", async () => {
+    const { SIGNALS } = await import("@/lib/status");
+    for (const locale of LOCALES) expect(getDict(locale).status.signals.map(([k]) => k)).toEqual([...SIGNALS]);
+  });
+
+  it("builds the shields.io endpoint URL only from a public https source", async () => {
+    const { signalBadgeUrl } = await import("@/lib/status");
+    expect(signalBadgeUrl("", "ci", "pt")).toBeNull();
+    expect(signalBadgeUrl("http://exemplo.com/raw", "ci", "pt")).toBeNull();
+    const url = signalBadgeUrl("https://gist.githubusercontent.com/u/abc/raw/", "ci", "en");
+    expect(url).toBe(
+      "https://img.shields.io/endpoint?url=" +
+        encodeURIComponent("https://gist.githubusercontent.com/u/abc/raw/nivela-ci.en.json") +
+        "&style=flat-square",
+    );
+  });
+});
