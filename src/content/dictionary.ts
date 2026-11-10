@@ -171,10 +171,10 @@ const pt = {
     title: "Nivela: um ERP SaaS completo, do banco de dados ao balcão.",
     lead: "Sistema de gestão multiempresa para negócios de serviço: agenda, atendimento, financeiro, fiscal, planos recorrentes, cobrança e IA. Concebido, construído e operado inteiramente pela nossa equipe.",
     stats: [
-      ["157 mil", "linhas de Python"],
-      ["200+", "services de domínio"],
-      ["170", "migrations versionadas"],
-      ["275", "arquivos de teste automatizado"],
+      ["200 mil", "linhas de Python"],
+      ["300", "services de domínio"],
+      ["185", "migrations versionadas"],
+      ["330+", "arquivos de teste automatizado"],
       ["14", "decisões de arquitetura registradas"],
     ] as [string, string][],
     videos: [
@@ -571,10 +571,10 @@ const en: Dict = {
     title: "Nivela: a complete SaaS ERP, from the database to the front desk.",
     lead: "Multi-company management software for service businesses: scheduling, operations, finance, tax, recurring plans, billing and AI. Designed, built and operated entirely by our team.",
     stats: [
-      ["157k", "lines of Python"],
-      ["200+", "domain services"],
-      ["170", "versioned migrations"],
-      ["275", "automated test files"],
+      ["200k", "lines of Python"],
+      ["300", "domain services"],
+      ["185", "versioned migrations"],
+      ["330+", "automated test files"],
       ["14", "recorded architecture decisions"],
     ],
     videos: [

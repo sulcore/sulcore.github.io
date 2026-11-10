@@ -42,3 +42,22 @@ ffmpeg -ss 2 -i public/video/name.mp4 -frames:v 1 -vf scale=1280:-1 -q:v 4 publi
 - Real numbers only, and check them before publishing.
 - Short sentences. Concrete over vague: "NFS-e issued directly" beats "fiscal solutions".
 - No prices on the site.
+
+## Public site: what never goes here
+
+This repository and the site are **public**. Only institutional and product content.
+
+- **Never:** server IPs, internal hostnames (`*.internal`, staging/homologation URLs), CI machine or runner
+  names, admin/internal routes, credentials, tokens, API keys, personal e-mails, or any customer data.
+  Infrastructure details of the products (Nivela, Repara) live in their private repositories and vault.
+- **Tech stack is fine** at the level a buyer would read it ("PostgreSQL", "GitHub Actions"), never as
+  operational detail (which machine, which region, which account).
+- **Customers:** only with written permission. Without it, describe them generically ("an authorized repair
+  shop"), as the Repara case does.
+- **Numbers** come from the real products and are rounded down. Re-check before publishing and note the date
+  in the PR.
+
+`tests/unit/content.test.ts` ("public content") fails the build if a text matches an IP, internal host, CI
+machine, internal route, personal e-mail or token pattern. If it flags a false positive, rephrase the text;
+don't weaken the pattern without a reason in the PR.
+

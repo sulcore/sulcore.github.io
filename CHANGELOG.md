@@ -1,5 +1,14 @@
 # Changelog
 
+## 2026-11-10 · public-content guard and Nivela numbers
+
+- Nivela numbers updated from the real repository on 2026-11-10, rounded down: ~200k lines of
+  Python, 300 domain services, 185 migrations, 330+ test files (case page and home stats, PT and EN).
+- `docs/CONTENT.md` gains "Public site: what never goes here" (no IPs, internal hosts, CI machines,
+  credentials, personal e-mails or customer data).
+- New "public content" unit test fails the build if any site text matches those patterns.
+- `AGENTS.md` (+ `CLAUDE.md`) with the rules for AI agents working on this public repository.
+
 ## 2026-11-04 · Repara
 
 - New own product on the site: **Repara**, for authorized repair centers. Page `/pt/cases/repara/`
